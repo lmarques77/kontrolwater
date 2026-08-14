@@ -4103,6 +4103,96 @@
       .hs-content { max-width: 100% !important; opacity: 1 !important; transform: none !important; }
       .hs-chrome-label, .hs-counter, .hs-dots, .hs-progress-bar { display: none; }
     }
+
+    /* ── Contact choice menu ── */
+    .nav-cta { border: 0; font-family: inherit; cursor: pointer; }
+    .contact-menu {
+      position: fixed; z-index: 1300; top: 76px; right: var(--pad);
+      width: min(330px, calc(100vw - 32px)); padding: 14px;
+      background: rgba(4,9,19,.97); border: 1px solid rgba(92,170,255,.28);
+      box-shadow: 0 24px 80px rgba(0,0,0,.65), 0 0 50px rgba(15,98,254,.10);
+      backdrop-filter: blur(18px);
+    }
+    .contact-menu[hidden] { display: none; }
+    .contact-menu-head { display:flex; align-items:center; justify-content:space-between; padding: 6px 6px 14px; font-family:var(--mono); font-size:9px; letter-spacing:.16em; text-transform:uppercase; color:rgba(255,255,255,.5); }
+    .contact-menu-close { border:0; background:none; color:#fff; font-size:22px; cursor:pointer; }
+    .contact-choice { width:100%; display:flex; align-items:center; gap:14px; padding:16px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.025); color:#fff; text-align:left; cursor:pointer; }
+    .contact-choice + .contact-choice { margin-top:8px; }
+    .contact-choice:hover { border-color:rgba(83,166,255,.45); background:rgba(15,98,254,.09); }
+    .contact-choice-icon { width:34px; height:34px; display:grid; place-items:center; border:1px solid rgba(83,166,255,.35); color:#58adff; border-radius:50%; }
+    .contact-choice strong, .contact-choice small { display:block; }
+    .contact-choice strong { font-size:14px; font-weight:500; }
+    .contact-choice small { margin-top:4px; color:rgba(255,255,255,.38); font-size:11px; }
+    .contact-menu-quote { display:block; padding:15px 6px 4px; color:#73b7ff; font-size:11px; text-decoration:none; }
+    .contact-toast { position:fixed; z-index:1400; top:84px; left:50%; transform:translateX(-50%); padding:12px 16px; background:#0a1b3b; border:1px solid rgba(77,160,255,.5); color:#fff; font-size:12px; white-space:nowrap; }
+
+    /* Europe block now supports precise visual ordering at every breakpoint */
+    .about-layout { display:block; }
+    .about-copy { display:grid; grid-template-columns:minmax(360px,.78fr) minmax(0,1.22fr); column-gap:clamp(44px,4vw,72px); align-items:center; }
+    .about-copy > div.sr:first-child { display:contents; }
+    .about-copy .label, .about-copy .about-h2, .about-copy .about-origin, .about-copy .about-proof { grid-column:1; }
+    .about-copy .label { align-self:end; }
+    .about-copy .about-img-wrap { grid-column:2; grid-row:1 / span 4; }
+
+    /* More liquid handoff between the system and the next chapter */
+    .section-ray::before { animation: divider-water 4.8s ease-in-out infinite; }
+    .section-ray::after { animation: divider-glint 4.8s ease-in-out infinite; }
+    @keyframes divider-water { 0%,100% { transform:translate(-54%,-50%) scaleX(.92); opacity:.55; } 50% { transform:translate(-46%,-50%) scaleX(1.05); opacity:1; } }
+    @keyframes divider-glint { 0%,100% { left:20%; opacity:.25; } 50% { left:80%; opacity:1; } }
+
+    @media (max-width: 640px) {
+      /* Two useful columns instead of a squeezed desktop table */
+      .benefit-head, .benefit-row { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+      .benefit-head-label, .benefit-topic { display:none; }
+      .benefit-head > div, .benefit-cell { padding:17px 14px; }
+      .benefit-col-title { font-size:13px; min-height:58px; }
+      .benefit-cell { font-size:12px; line-height:1.45; gap:8px; }
+      .benefit-mark { margin-top:0; }
+      .diff-inner { padding-left:16px; padding-right:16px; }
+
+      /* Product modes are named where the eye is reading, not below the render */
+      .cp-chips { display:none; }
+      .cp-panel-h3::before { content:attr(data-mode-label); display:block; margin-bottom:14px; color:#4da5ff; font-family:var(--mono); font-size:10px; letter-spacing:.2em; text-transform:uppercase; }
+      .cp-stage { background:transparent !important; }
+
+      /* Remove the artificial navy box under the technical drawing */
+      .installed-visual { aspect-ratio:auto; background:transparent; box-shadow:none; border-radius:0; overflow:visible; }
+      .installed-diagram { background:transparent; }
+
+      /* Tighten render → technical figures rhythm */
+      .insys { padding-bottom:12px; }
+      .insys-viewport { margin-bottom:10px; }
+      .insys-callouts { display:none; }
+      .numbers { padding-top:0; }
+
+      /* Compact, visual audience cards */
+      .audience-header { margin-bottom:34px; }
+      .audience-frame { display:none; }
+      .audience-panels { gap:12px; background:transparent; }
+      .audience-panel { position:relative; padding:25px 22px 24px; gap:12px; border:1px solid rgba(255,255,255,.08); background:linear-gradient(135deg,rgba(15,98,254,.10),rgba(255,255,255,.018) 62%); overflow:hidden; }
+      .audience-panel::after { position:absolute; right:16px; top:13px; font:600 34px/1 var(--mono); color:rgba(62,151,255,.16); }
+      .audience-panel:nth-child(1)::after { content:'01'; }
+      .audience-panel:nth-child(2)::after { content:'02'; }
+      .audience-panel:nth-child(3)::after { content:'03'; }
+      .audience-tag { max-width:76%; font-size:10px; }
+      .audience-panel-h3 { font-size:25px; }
+      .audience-panel-body { font-size:13px; line-height:1.55; max-width:34ch; }
+
+      /* Image sits between the engineering promise and its origin line */
+      .about-copy { display:flex; flex-direction:column; align-items:stretch; }
+      .about-copy > div.sr:first-child { display:contents; }
+      .about-copy .label { order:1; }
+      .about-copy .about-h2 { order:2; }
+      .about-copy .about-img-wrap { order:3; margin:10px -4px 22px; }
+      .about-copy .about-origin { order:4; margin-top:0; }
+      .about-copy .about-proof { order:5; margin-top:24px; }
+      .about-img { height:auto; width:100%; object-fit:contain; }
+
+      .section-ray { height:96px; }
+      .hscroll-intro { padding-top:62px; }
+      .contact-menu { top:76px; right:16px; }
+      .nav-mobile-menu .nav-cta-mobile { border:0; width:100%; font:inherit; cursor:pointer; }
+    }
   </style>
 </head>
 <body>
@@ -4119,7 +4209,7 @@
       <li><a href="#who-its-for">Who It's For</a></li>
       <li><a href="#compare">Compare</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Contact Us</a>
+    <button type="button" class="nav-cta" id="contact-menu-trigger" aria-expanded="false" aria-controls="contact-menu">Contact Us</button>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -4130,7 +4220,23 @@
     <a href="#how-it-works">How It Works</a>
     <a href="#who-its-for">Who It's For</a>
     <a href="#compare">Compare</a>
-    <a href="#contact" class="nav-cta-mobile">Contact Us</a>
+    <button type="button" class="nav-cta-mobile" id="contact-menu-trigger-mobile">Contact Us</button>
+  </div>
+
+  <div class="contact-menu" id="contact-menu" hidden>
+    <div class="contact-menu-head">
+      <span>Speak to KONTROLWATER</span>
+      <button type="button" class="contact-menu-close" aria-label="Close contact menu">×</button>
+    </div>
+    <button type="button" class="contact-choice" data-contact-channel="phone">
+      <span class="contact-choice-icon" aria-hidden="true">☎</span>
+      <span><strong>Call us</strong><small>Number coming soon</small></span>
+    </button>
+    <button type="button" class="contact-choice" data-contact-channel="whatsapp">
+      <span class="contact-choice-icon" aria-hidden="true">◉</span>
+      <span><strong>WhatsApp</strong><small>Number coming soon</small></span>
+    </button>
+    <a href="#contact" class="contact-menu-quote">Prefer a quote? Use the assessment →</a>
   </div>
 
   <!-- ═══════════════════════════════════════════
@@ -4262,31 +4368,31 @@
 
         <div class="cp-panel active" id="cp-p0">
 
-          <h3 class="cp-panel-h3">Every parameter.<br/>Every 10 seconds.</h3>
+          <h3 class="cp-panel-h3" data-mode-label="Sense">Every parameter.<br/>Every 10 seconds.</h3>
           <p class="cp-panel-body">pH, ORP, temperature, flow rate, and dissolved saturation — sampled continuously. Not on a schedule. Not when a technician visits. Always.</p>
         </div>
 
         <div class="cp-panel" id="cp-p1">
 
-          <h3 class="cp-panel-h3">Correction without<br/>intervention.</h3>
+          <h3 class="cp-panel-h3" data-mode-label="Dose">Correction without<br/>intervention.</h3>
           <p class="cp-panel-body">When chemistry drifts, the system doses automatically. The exact compound. The exact quantity. At the exact moment it is needed.</p>
         </div>
 
         <div class="cp-panel" id="cp-p2">
 
-          <h3 class="cp-panel-h3">Filtration that<br/>runs itself.</h3>
+          <h3 class="cp-panel-h3" data-mode-label="Filter">Filtration that<br/>runs itself.</h3>
           <p class="cp-panel-body">Pump cycles, backwash timing, and pressure monitoring — managed automatically. No manual scheduling. The system adjusts to what the water requires.</p>
         </div>
 
         <div class="cp-panel" id="cp-p3">
 
-          <h3 class="cp-panel-h3">Flow balanced.<br/>Energy optimised.</h3>
+          <h3 class="cp-panel-h3" data-mode-label="Circulate">Flow balanced.<br/>Energy optimised.</h3>
           <p class="cp-panel-body">Intelligent circulation control manages flow rates and hydraulic balance. Pump scheduling adapts to load, reducing energy draw without compromising water quality.</p>
         </div>
 
         <div class="cp-panel" id="cp-p4">
 
-          <h3 class="cp-panel-h3">Issues flagged before<br/>they become failures.</h3>
+          <h3 class="cp-panel-h3" data-mode-label="Predict">Issues flagged before<br/>they become failures.</h3>
           <p class="cp-panel-body">Anomalies in sensor data trigger early alerts. Equipment degradation, chemical drift, and flow irregularities are caught before they affect water quality or availability.</p>
         </div>
       </div>
@@ -4301,7 +4407,6 @@
   ═══════════════════════════════════════════════ -->
   <div class="hscroll-intro">
     <div class="wrap">
-      <p class="label sr">Built for</p>
       <h2 class="hscroll-intro-h2 sr sr-d1">The Highest Standard<br/>in Pool Control.</h2>
       <p class="hscroll-intro-sub sr sr-d2">Premium pool automation for private villas, resorts, hotels, and commercial operators across Europe.</p>
     </div>
@@ -4524,19 +4629,19 @@
         <div class="audience-panel sr sr-stagger" style="--stagger-delay:0ms">
           <div class="audience-tag">If you own a pool</div>
           <h3 class="audience-panel-h3">No more service calls.</h3>
-          <p class="audience-panel-body">KONTROLWATER installs and takes over. Chemistry is managed automatically, around the clock. Most owners have not called a technician since the day it was commissioned.</p>
+          <p class="audience-panel-body">Continuous chemistry control keeps the pool ready without routine callouts.</p>
         </div>
 
         <div class="audience-panel sr sr-stagger" style="--stagger-delay:120ms">
           <div class="audience-tag">If you install or maintain pools</div>
           <h3 class="audience-panel-h3">Install it. Walk away.</h3>
-          <p class="audience-panel-body">Retrofits into any standard plant room in under 4 hours. No structural work, no specialist certification. Once commissioned, it runs without intervention, and so does your relationship with that client.</p>
+          <p class="audience-panel-body">Retrofit in under four hours. Commission once, then monitor remotely.</p>
         </div>
 
         <div class="audience-panel sr sr-stagger" style="--stagger-delay:240ms">
           <div class="audience-tag">If you manage commercial pools</div>
           <h3 class="audience-panel-h3">Compliance. Without the overhead.</h3>
-          <p class="audience-panel-body">Water quality is a regulatory requirement, not something to manage manually. KONTROLWATER keeps every pool within specification automatically and logs every reading, so audit preparation is already done.</p>
+          <p class="audience-panel-body">Automatic control and complete records keep every pool compliant and audit-ready.</p>
         </div>
 
       </div>
@@ -4772,33 +4877,33 @@
         </div>
         <div class="benefit-row" role="row">
           <div class="benefit-topic" role="rowheader">Monitoring</div>
-          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Scheduled manual checks with gaps in visibility.</span></div>
-          <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>Live readings updated every 10 seconds.</span></div>
+          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Scheduled checks leave visibility gaps.</span></div>
+          <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>Live readings every 10 seconds.</span></div>
         </div>
         <div class="benefit-row" role="row">
           <div class="benefit-topic" role="rowheader">Chemistry</div>
-          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Manual testing and chemical adjustment.</span></div>
-          <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>Precise dosing exactly when required.</span></div>
+          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Manual tests and adjustment.</span></div>
+          <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>Precise automatic dosing.</span></div>
         </div>
         <div class="benefit-row" role="row">
           <div class="benefit-topic" role="rowheader">Response</div>
-          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Problems found after they affect the pool.</span></div>
-          <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>Immediate correction keeps water stable.</span></div>
+          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Problems found after impact.</span></div>
+          <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>Immediate automatic correction.</span></div>
         </div>
         <div class="benefit-row" role="row">
           <div class="benefit-topic" role="rowheader">Prevention</div>
-          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Reactive callouts after an issue appears.</span></div>
-          <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>Early alerts for chemistry, pressure, and flow.</span></div>
+          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Reactive service callouts.</span></div>
+          <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>Early chemistry and flow alerts.</span></div>
         </div>
         <div class="benefit-row" role="row">
           <div class="benefit-topic" role="rowheader">Records</div>
-          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Fragmented notes and manual reporting.</span></div>
-          <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>Automatic, audit-ready system records.</span></div>
+          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Fragmented manual records.</span></div>
+          <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>Automatic audit-ready records.</span></div>
         </div>
         <div class="benefit-row" role="row">
           <div class="benefit-topic" role="rowheader">Oversight</div>
-          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Recurring on-site service intervention.</span></div>
-          <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>24/7 autonomous control from anywhere.</span></div>
+          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Recurring on-site oversight.</span></div>
+          <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>24/7 remote autonomous control.</span></div>
         </div>
       </div>
     </div>
@@ -4814,6 +4919,11 @@
           <div class="sr">
             <span class="label">Engineered in Europe</span>
             <h2 class="about-h2">ENGINEERED IN EUROPE. BUILT FOR PRECISION.</h2>
+            <div class="about-img-wrap sr">
+              <img class="about-img"
+                src="KW_Media/KW_AI/KW_ENGINEERED_EUROPE.png"
+                alt="KONTROLWATER automated pool-management system engineered in Europe" />
+            </div>
             <p class="about-origin sr">Designed and manufactured in Portugal. Built to industrial standards.</p>
           </div>
           <ul class="about-proof sr">
@@ -4821,11 +4931,6 @@
             <li class="about-proof-item"><span class="about-proof-mark"></span>Tested and calibrated at our European facility</li>
             <li class="about-proof-item"><span class="about-proof-mark"></span>Zero fleet-wide failures to date</li>
           </ul>
-        </div>
-        <div class="about-img-wrap sr">
-          <img class="about-img"
-            src="KW_Media/KW_AI/KW_ENGINEERED_EUROPE.png"
-            alt="KONTROLWATER automated pool-management system engineered in Europe" />
         </div>
       </div>
     </div>
@@ -4929,6 +5034,10 @@
               <input id="lead-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
             </div>
             <div class="lead-field">
+              <label for="lead-phone">Phone number</label>
+              <input id="lead-phone" name="phone" type="tel" autocomplete="tel" placeholder="Include country code" required />
+            </div>
+            <div class="lead-field">
               <label for="lead-location">Pool location</label>
               <input id="lead-location" name="location" type="text" autocomplete="country-name" placeholder="City, country" required />
             </div>
@@ -4963,6 +5072,7 @@
             <label class="lead-priority"><input type="checkbox" name="priority" value="Other" id="lead-other-toggle" /><span class="lead-priority-mark">✓</span><span>Other</span></label>
           </div>
           <div class="lead-priority-error" id="lead-priority-error" aria-live="polite"></div>
+          <div class="lead-priority-error" id="lead-submit-error" aria-live="polite"></div>
           <div class="lead-field lead-other-field" id="lead-other-field" hidden>
             <label for="lead-other">Other priority <span aria-hidden="true">·</span> Optional</label>
             <input id="lead-other" name="other_priority" type="text" placeholder="Tell us what matters to you" />
@@ -4975,11 +5085,11 @@
 
         <div class="lead-panel lead-success" data-lead-step="success" aria-live="polite">
           <div class="lead-success-mark" aria-hidden="true">✓</div>
-          <div class="lead-kicker">Assessment prepared</div>
-          <h2 class="lead-question lead-question-sm">Your enquiry is ready.</h2>
-          <p class="lead-helper">Your email application has been opened with the project details prepared. Send that message and the KONTROLWATER team can take it from there.</p>
+          <div class="lead-kicker">Quote submitted</div>
+          <h2 class="lead-question lead-question-sm">Thank you. We’ll be in touch.</h2>
+          <p class="lead-helper">Your details have been sent to KONTROLWATER. Our team will contact you as soon as possible to discuss your pool and prepare the right quote.</p>
           <button class="btn-ghost" type="button" id="lead-restart">Start another assessment</button>
-          <p class="lead-note">Response destination · hello@kontrolwater.com</p>
+          <p class="lead-note">A member of our team will respond using the contact details provided.</p>
         </div>
       </form>
     </div>
@@ -5032,6 +5142,19 @@
     const onScroll = () => nav.classList.toggle('filled', window.scrollY > 40);
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+
+    /* Keep the assessment in the main decision journey, not beside the closing CTA. */
+    (() => {
+      const lead = document.getElementById('contact');
+      const comparison = document.getElementById('compare');
+      if (lead && comparison) {
+        comparison.before(lead);
+        if (location.hash) {
+          const target = document.querySelector(location.hash);
+          if (target) requestAnimationFrame(() => target.scrollIntoView());
+        }
+      }
+    })();
 
 
     /* ══════════════════════════════════════════════════
@@ -5793,7 +5916,7 @@
       }
       setAppState(0);
 
-      // Skip scroll-driven states on mobile — section is natural height, show state 0 only
+      // Desktop follows page scroll. Mobile uses direct swipe and tappable dots.
       if (window.innerWidth >= 640) {
         ScrollTrigger.create({
           trigger: avSection,
@@ -5807,7 +5930,70 @@
             setAppState(idx);
           }
         });
+      } else {
+        let mobileState = 0;
+        let touchStartX = 0;
+        const phone = avSection.querySelector('.appvis-phone');
+        const selectMobileState = idx => {
+          mobileState = (idx + appStates.length) % appStates.length;
+          setAppState(mobileState);
+        };
+        appDots.forEach((dot, idx) => {
+          dot.setAttribute('role', 'button');
+          dot.setAttribute('tabindex', '0');
+          dot.setAttribute('aria-label', 'Show app screen ' + (idx + 1));
+          dot.addEventListener('click', () => selectMobileState(idx));
+          dot.addEventListener('keydown', event => {
+            if (event.key === 'Enter' || event.key === ' ') selectMobileState(idx);
+          });
+        });
+        if (phone) {
+          phone.addEventListener('touchstart', event => { touchStartX = event.changedTouches[0].clientX; }, { passive: true });
+          phone.addEventListener('touchend', event => {
+            const delta = event.changedTouches[0].clientX - touchStartX;
+            if (Math.abs(delta) < 38) return;
+            selectMobileState(mobileState + (delta < 0 ? 1 : -1));
+          }, { passive: true });
+        }
       }
+    })();
+
+    /* ── Direct contact menu ── */
+    (() => {
+      const menu = document.getElementById('contact-menu');
+      const triggers = [document.getElementById('contact-menu-trigger'), document.getElementById('contact-menu-trigger-mobile')].filter(Boolean);
+      const close = menu && menu.querySelector('.contact-menu-close');
+      if (!menu || !triggers.length) return;
+      const setOpen = open => {
+        menu.hidden = !open;
+        triggers.forEach(trigger => trigger.setAttribute('aria-expanded', String(open)));
+      };
+      triggers.forEach(trigger => trigger.addEventListener('click', event => {
+        event.stopPropagation();
+        if (trigger.id === 'contact-menu-trigger-mobile') {
+          const hamburger = document.getElementById('nav-hamburger');
+          const mobileNav = document.getElementById('nav-mobile-menu');
+          if (hamburger) hamburger.classList.remove('open');
+          if (mobileNav) mobileNav.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+        setOpen(menu.hidden);
+      }));
+      close.addEventListener('click', () => setOpen(false));
+      menu.querySelector('.contact-menu-quote').addEventListener('click', () => setOpen(false));
+      menu.querySelectorAll('[data-contact-channel]').forEach(choice => choice.addEventListener('click', () => {
+        const previous = document.querySelector('.contact-toast');
+        if (previous) previous.remove();
+        const toast = document.createElement('div');
+        toast.className = 'contact-toast';
+        toast.textContent = 'The direct contact number will be added shortly.';
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 2600);
+      }));
+      document.addEventListener('click', event => {
+        if (!menu.hidden && !menu.contains(event.target)) setOpen(false);
+      });
+      document.addEventListener('keydown', event => { if (event.key === 'Escape') setOpen(false); });
     })();
 
 
@@ -6547,6 +6733,7 @@
         const requiredFields = [
           document.getElementById('lead-name'),
           document.getElementById('lead-email'),
+          document.getElementById('lead-phone'),
           document.getElementById('lead-location'),
           document.getElementById('lead-timeframe')
         ];
@@ -6589,7 +6776,7 @@
         field.addEventListener('input', () => field.removeAttribute('aria-invalid'));
       });
 
-      form.addEventListener('submit', event => {
+      form.addEventListener('submit', async event => {
         event.preventDefault();
         const selectedPriorities = [...form.querySelectorAll('input[name="priority"]:checked')];
         if (!selectedPriorities.length) {
@@ -6598,23 +6785,34 @@
           return;
         }
         const data = new FormData(form);
-        const subject = 'KONTROLWATER pool assessment: ' + data.get('pool_type');
-        const body = [
-          'New KONTROLWATER pool assessment',
-          '',
-          'Pool type: ' + data.get('pool_type'),
-          'Name: ' + data.get('name'),
-          'Email: ' + data.get('email'),
-          'Location: ' + data.get('location'),
-          'Timeframe: ' + data.get('timeframe'),
-          '',
-          'Priorities: ' + data.getAll('priority').join(', '),
-          'Other priority: ' + (data.get('other_priority') || 'None provided')
-        ].join('\n');
-
-        window.location.href = 'mailto:hello@kontrolwater.com?subject=' +
-          encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-        showStep('success');
+        const submitButton = form.querySelector('[type="submit"]');
+        const submitError = document.getElementById('lead-submit-error');
+        submitError.textContent = '';
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting…';
+        try {
+          const response = await fetch('/api/quote', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              poolType: data.get('pool_type'),
+              name: data.get('name'),
+              email: data.get('email'),
+              phone: data.get('phone'),
+              location: data.get('location'),
+              timeframe: data.get('timeframe'),
+              priorities: data.getAll('priority'),
+              otherPriority: data.get('other_priority') || ''
+            })
+          });
+          if (!response.ok) throw new Error('Submission failed');
+          showStep('success');
+        } catch (error) {
+          submitError.textContent = 'We could not submit your quote just now. Please try again shortly.';
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Request my assessment →';
+        }
       });
 
       document.getElementById('lead-restart').addEventListener('click', () => {
