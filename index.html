@@ -4114,12 +4114,14 @@
       backdrop-filter: blur(18px);
     }
     .contact-menu[hidden] { display: none; }
-    .contact-menu-head { display:flex; align-items:center; justify-content:space-between; padding: 6px 6px 14px; font-family:var(--mono); font-size:9px; letter-spacing:.16em; text-transform:uppercase; color:rgba(255,255,255,.5); }
+    .contact-menu-head { display:flex; align-items:center; justify-content:flex-end; min-height:28px; padding:0 2px 8px; }
     .contact-menu-close { border:0; background:none; color:#fff; font-size:22px; cursor:pointer; }
     .contact-choice { width:100%; display:flex; align-items:center; gap:14px; padding:16px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.025); color:#fff; text-align:left; cursor:pointer; }
     .contact-choice + .contact-choice { margin-top:8px; }
     .contact-choice:hover { border-color:rgba(83,166,255,.45); background:rgba(15,98,254,.09); }
     .contact-choice-icon { width:34px; height:34px; display:grid; place-items:center; border:1px solid rgba(83,166,255,.35); color:#58adff; border-radius:50%; }
+    .contact-choice-icon svg { width:17px; height:17px; fill:currentColor; }
+    .contact-choice-icon--whatsapp { color:#62d991; border-color:rgba(98,217,145,.38); }
     .contact-choice strong, .contact-choice small { display:block; }
     .contact-choice strong { font-size:14px; font-weight:500; }
     .contact-choice small { margin-top:4px; color:rgba(255,255,255,.38); font-size:11px; }
@@ -4134,11 +4136,29 @@
     .about-copy .label { align-self:end; }
     .about-copy .about-img-wrap { grid-column:2; grid-row:1 / span 4; }
 
-    /* More liquid handoff between the system and the next chapter */
-    .section-ray::before { animation: divider-water 4.8s ease-in-out infinite; }
-    .section-ray::after { animation: divider-glint 4.8s ease-in-out infinite; }
-    @keyframes divider-water { 0%,100% { transform:translate(-54%,-50%) scaleX(.92); opacity:.55; } 50% { transform:translate(-46%,-50%) scaleX(1.05); opacity:1; } }
-    @keyframes divider-glint { 0%,100% { left:20%; opacity:.25; } 50% { left:80%; opacity:1; } }
+    /* Low-opacity water-flow handoff between product and audience sections */
+    .section-ray { height:112px; background:#000; }
+    .section-ray::before,
+    .section-ray::after {
+      content:''; position:absolute; left:-12%; width:124%; border-radius:50%;
+      background:none; box-shadow:none; filter:drop-shadow(0 0 14px rgba(43,139,255,.14));
+    }
+    .section-ray::before {
+      top:33px; height:58px; border-top:1px solid rgba(71,162,255,.24);
+      animation:water-flow-a 8s ease-in-out infinite;
+    }
+    .section-ray::after {
+      top:47px; height:45px; border-top:1px solid rgba(87,174,255,.13);
+      animation:water-flow-b 10s ease-in-out infinite;
+    }
+    @keyframes water-flow-a {
+      0%,100% { transform:translateX(-2%) scaleY(.72) rotate(-.25deg); opacity:.34; }
+      50% { transform:translateX(2%) scaleY(1.12) rotate(.2deg); opacity:.78; }
+    }
+    @keyframes water-flow-b {
+      0%,100% { transform:translateX(3%) scaleY(1.08) rotate(.18deg); opacity:.2; }
+      50% { transform:translateX(-3%) scaleY(.68) rotate(-.2deg); opacity:.55; }
+    }
 
     @media (max-width: 640px) {
       /* Two useful columns instead of a squeezed desktop table */
@@ -4170,10 +4190,6 @@
       .audience-frame { display:none; }
       .audience-panels { gap:12px; background:transparent; }
       .audience-panel { position:relative; padding:25px 22px 24px; gap:12px; border:1px solid rgba(255,255,255,.08); background:linear-gradient(135deg,rgba(15,98,254,.10),rgba(255,255,255,.018) 62%); overflow:hidden; }
-      .audience-panel::after { position:absolute; right:16px; top:13px; font:600 34px/1 var(--mono); color:rgba(62,151,255,.16); }
-      .audience-panel:nth-child(1)::after { content:'01'; }
-      .audience-panel:nth-child(2)::after { content:'02'; }
-      .audience-panel:nth-child(3)::after { content:'03'; }
       .audience-tag { max-width:76%; font-size:10px; }
       .audience-panel-h3 { font-size:25px; }
       .audience-panel-body { font-size:13px; line-height:1.55; max-width:34ch; }
@@ -4225,18 +4241,21 @@
 
   <div class="contact-menu" id="contact-menu" hidden>
     <div class="contact-menu-head">
-      <span>Speak to KONTROLWATER</span>
       <button type="button" class="contact-menu-close" aria-label="Close contact menu">×</button>
     </div>
     <button type="button" class="contact-choice" data-contact-channel="phone">
-      <span class="contact-choice-icon" aria-hidden="true">☎</span>
+      <span class="contact-choice-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M7.1 2.8 9.7 2a1.5 1.5 0 0 1 1.8.9l1.2 3a1.5 1.5 0 0 1-.4 1.7l-1.5 1.3a14.2 14.2 0 0 0 4.3 4.3l1.3-1.5a1.5 1.5 0 0 1 1.7-.4l3 1.2a1.5 1.5 0 0 1 .9 1.8l-.8 2.6a4 4 0 0 1-4.3 2.8A17 17 0 0 1 4.3 7.1 4 4 0 0 1 7.1 2.8Z"/></svg>
+      </span>
       <span><strong>Call us</strong><small>Number coming soon</small></span>
     </button>
     <button type="button" class="contact-choice" data-contact-channel="whatsapp">
-      <span class="contact-choice-icon" aria-hidden="true">◉</span>
+      <span class="contact-choice-icon contact-choice-icon--whatsapp" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.6L2.3 22l5.5-1.3A9.7 9.7 0 1 0 12 2Zm0 2a7.7 7.7 0 0 1 0 15.4 7.6 7.6 0 0 1-3.9-1.1l-.5-.3-2.6.6.6-2.5-.3-.5A7.7 7.7 0 0 1 12 4Zm-3.2 3.7c-.2 0-.5.1-.7.4-.2.3-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.6 4.1 3.5 2 .8 2.5.7 3 .6.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.4l-1.8-.8c-.3-.1-.5-.2-.7.2l-.9 1.1c-.2.2-.3.2-.6.1a6.2 6.2 0 0 1-1.8-1.1 6.8 6.8 0 0 1-1.3-1.6c-.1-.3 0-.4.1-.5l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.8-1.9c-.2-.5-.5-.5-.8-.5Z"/></svg>
+      </span>
       <span><strong>WhatsApp</strong><small>Number coming soon</small></span>
     </button>
-    <a href="#contact" class="contact-menu-quote">Prefer a quote? Use the assessment →</a>
+    <a href="#contact" class="contact-menu-quote">Prefer an email quote? Use the assessment →</a>
   </div>
 
   <!-- ═══════════════════════════════════════════
@@ -5148,7 +5167,7 @@
       const lead = document.getElementById('contact');
       const comparison = document.getElementById('compare');
       if (lead && comparison) {
-        comparison.before(lead);
+        comparison.after(lead);
         if (location.hash) {
           const target = document.querySelector(location.hash);
           if (target) requestAnimationFrame(() => target.scrollIntoView());
@@ -5173,7 +5192,7 @@
         setTimeout(() => hl1 && hl1.classList.add('up'), 600);
         setTimeout(() => hl2 && hl2.classList.add('up'), 1600);
         setTimeout(() => heroSub    && heroSub.classList.add('in'), 2800);
-        setTimeout(() => heroActions && heroActions.classList.add('in'), 3200);
+        setTimeout(() => heroActions && heroActions.classList.add('in'), 5600);
       }
 
       if (heroVideo.readyState >= 3) {
