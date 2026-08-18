@@ -3096,6 +3096,10 @@
       max-width: none;
       white-space: nowrap;
     }
+    .lead-single-line {
+      max-width: none;
+      white-space: nowrap;
+    }
     .lead-helper {
       max-width: 52ch;
       margin-bottom: 38px;
@@ -3425,6 +3429,8 @@
     ─────────────────────────────────────────────────────── */
     @media (max-width: 900px) {
       :root { --pad: 40px; }
+
+      .lead-single-line { white-space: normal; }
 
       .intro-inner { grid-template-columns: 1fr; gap: 48px; }
       .intro { padding: 80px var(--pad); }
@@ -5021,7 +5027,7 @@
 
         <div class="lead-panel is-active" data-lead-step="1">
           <div class="lead-kicker">Let’s start with your pool</div>
-          <h2 class="lead-question" id="lead-title">What kind of pool are we looking after?</h2>
+          <h2 class="lead-question lead-single-line" id="lead-title">What kind of pool are we looking after?</h2>
           <div class="lead-options" role="group" aria-label="Choose your pool type">
             <button class="lead-option" type="button" data-pool-type="Private villa">
               <span class="lead-option-num">01</span>
@@ -5045,9 +5051,8 @@
         </div>
 
         <div class="lead-panel" data-lead-step="2">
-          <div class="lead-kicker">The essentials</div>
           <h2 class="lead-question lead-question-sm">Where should we start?</h2>
-          <p class="lead-helper">A few details help our engineering team understand your installation before we speak.</p>
+          <p class="lead-helper lead-single-line">A few details help our engineering team understand your installation before we speak.</p>
           <div class="lead-fields">
             <div class="lead-field">
               <label for="lead-name">Your name</label>
