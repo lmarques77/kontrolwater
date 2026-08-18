@@ -3092,6 +3092,10 @@
       margin-bottom: 42px;
     }
     .lead-question-sm { font-size: clamp(32px, 4vw, 54px); margin-bottom: 16px; }
+    .lead-question-priorities {
+      max-width: none;
+      white-space: nowrap;
+    }
     .lead-helper {
       max-width: 52ch;
       margin-bottom: 38px;
@@ -3625,6 +3629,7 @@
       .lead-topline { margin-bottom: 28px; }
       .lead-shell, .lead-panel { min-height: 0; }
       .lead-panel { padding: 34px 24px; }
+      .lead-question-priorities { white-space: normal; }
       .lead-options { grid-template-columns: 1fr; }
       .lead-priorities { grid-template-columns: 1fr; }
       .lead-option { min-height: 126px; }
@@ -5078,8 +5083,7 @@
         </div>
 
         <div class="lead-panel" data-lead-step="3">
-          <div class="lead-kicker">One last detail</div>
-          <h2 class="lead-question lead-question-sm">What matters most for this project?</h2>
+          <h2 class="lead-question lead-question-sm lead-question-priorities">What matters most for this project?</h2>
           <p class="lead-helper">Choose every priority that applies.</p>
           <div class="lead-priorities" role="group" aria-label="Project priorities">
             <label class="lead-priority"><input type="checkbox" name="priority" value="Less maintenance" /><span class="lead-priority-mark">✓</span><span>Less maintenance</span></label>
