@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KONTROLWATER | Automated Pool Management System for Luxury Villas and Commercial Pools</title>
   <meta name="description" content="KONTROLWATER is an autonomous pool management system that monitors water chemistry every 10 seconds, doses automatically, and eliminates manual maintenance. For private villas, resorts, hotels, and commercial pool operators." />
+  <link rel="icon" href="KW_Media/KW-NEWASSETS/KW_HIGHRES_LOGO.png" type="image/png" />
 
   <script type="application/ld+json">
   {
@@ -4220,6 +4221,316 @@
       .contact-menu { top:76px; right:16px; }
       .nav-mobile-menu .nav-cta-mobile { border:0; width:100%; font:inherit; cursor:pointer; }
     }
+
+    /* ══════════════════════════════════════════════════
+       REFINEMENT PASS — shared editorial hierarchy
+    ══════════════════════════════════════════════════ */
+    :root {
+      --type-section: clamp(54px, 4.25vw, 60px);
+      --type-feature: clamp(36px, 3vw, 42px);
+      --type-body: clamp(18px, 1.35vw, 20px);
+      --section-space: clamp(104px, 10vw, 152px);
+    }
+    .label,
+    .num-label,
+    .audience-tag,
+    .cs-tag { font-size: 12px; line-height: 1.2; }
+
+    .intro-h2,
+    .hscroll-intro-h2,
+    .how-h2,
+    .insys-h2,
+    .audience-h2,
+    .installed-h2,
+    .appvis-h2,
+    .about-h2,
+    .team-h2 {
+      font-size: var(--type-section);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+      font-weight: 600;
+      text-transform: none;
+      text-wrap: balance;
+    }
+    .hscroll-intro-h2,
+    .appvis-h2,
+    .team-h2 { max-width: none; }
+    .hscroll-intro-h2 { white-space: nowrap; }
+
+    .intro-body p,
+    .hscroll-intro-sub,
+    .how-sub,
+    .insys-sub,
+    .audience-frame,
+    .installed-text,
+    .appvis-body p,
+    .about-origin {
+      font-size: var(--type-body);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    /* Product feature sequence */
+    .cp-panel-h3 {
+      font-size: var(--type-feature);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      font-weight: 600;
+    }
+    .cp-panel-body {
+      max-width: 38ch;
+      font-size: var(--type-body);
+      line-height: 1.68;
+      color: rgba(255,255,255,.66);
+    }
+
+    /* Premium handoff from product mechanics to environments */
+    .section-ray {
+      height: clamp(150px, 15vw, 220px);
+      margin-bottom: -1px;
+      overflow: hidden;
+      background: #000;
+      isolation: isolate;
+    }
+    .section-ray::before {
+      inset: 0;
+      transform: none;
+      width: auto;
+      height: auto;
+      border: 0;
+      border-radius: 0;
+      background:
+        linear-gradient(180deg, #000 2%, rgba(0,0,0,.76) 44%, rgba(0,10,28,.18) 100%),
+        url('KW_SG/pool1.png') center 58% / cover no-repeat;
+      opacity: .34;
+      filter: saturate(.72) contrast(1.08);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 32%, #000 100%);
+      mask-image: linear-gradient(to bottom, transparent 0%, #000 32%, #000 100%);
+      animation: none;
+    }
+    .section-ray::after {
+      inset: auto 0 0;
+      transform: none;
+      width: auto;
+      height: 72%;
+      border: 0;
+      border-radius: 0;
+      background: linear-gradient(180deg, transparent, rgba(15,98,254,.12));
+      filter: none;
+      animation: none;
+    }
+    .hscroll-intro {
+      padding: clamp(76px, 8vw, 112px) 0 clamp(54px, 6vw, 82px);
+      background: linear-gradient(180deg, rgba(5,16,38,.96), #000 74%);
+    }
+
+    /* Installed once narrative */
+    .how-header { align-items: start; gap: 72px; }
+    .how-h2 { position: static; white-space: nowrap; }
+    .how-sub { max-width: 42ch; color: rgba(255,255,255,.68); }
+    .step-title { font-size: 26px; letter-spacing: -.02em; text-transform: none; }
+    .step-primary { max-width: 36ch; font-size: 18px; line-height: 1.65; }
+    .how-transition { display: none; }
+
+    /* Comparison: two columns, topics nested into the reading flow */
+    .diff-inner { padding-top: var(--section-space); padding-bottom: var(--section-space); }
+    .diff-h2 { font-size: clamp(46px, 4vw, 58px); line-height: 1.05; }
+    .benefit-head,
+    .benefit-row { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
+    .benefit-head > div,
+    .benefit-cell { padding: 26px clamp(22px, 2.6vw, 38px); }
+    .benefit-topic-inline {
+      display: block;
+      margin-bottom: 8px;
+      font-family: var(--mono);
+      font-size: 11px;
+      line-height: 1.2;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.36);
+    }
+    .benefit-cell { font-size: 17px; line-height: 1.5; }
+    .benefit-row {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 340ms var(--ease-out), transform 340ms var(--ease-out), background 180ms;
+    }
+    .benefit-row.is-visible { opacity: 1; transform: none; }
+
+    /* Remote visibility */
+    .appvis-h2 { margin-bottom: 28px; }
+    .appvis-body { max-width: 48ch; margin-bottom: 0; }
+    .appvis-body p { color: rgba(255,255,255,.62); }
+
+    /* Engineering proof, composed as a single architectural block */
+    .about { padding: 0; }
+    .about-inner { padding: var(--section-space) clamp(40px, 6vw, 120px); }
+    .about-copy {
+      grid-template-columns: minmax(420px,.9fr) minmax(0,1.1fr);
+      column-gap: clamp(48px, 6vw, 96px);
+      row-gap: 34px;
+      align-items: start;
+    }
+    .about-copy .about-h2 {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      max-width: none;
+      white-space: nowrap;
+      margin: 0;
+    }
+    .about-copy .about-origin {
+      grid-column: 1;
+      grid-row: 2;
+      max-width: 38ch;
+      margin: 0;
+      color: rgba(104,174,255,.9);
+    }
+    .about-copy .about-img-wrap {
+      grid-column: 2;
+      grid-row: 2;
+      margin: 0;
+    }
+    .about-copy .about-proof {
+      grid-column: 1 / -1;
+      grid-row: 3;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 0;
+      margin-top: 34px;
+      border-top: 1px solid var(--border-faint);
+      border-bottom: 1px solid var(--border-faint);
+    }
+    .about-proof-item {
+      display: block;
+      padding: 30px clamp(20px, 2.6vw, 38px);
+      border: 0;
+      color: inherit;
+    }
+    .about-proof-item:first-child { border-top: 0; padding-left: 0; }
+    .about-proof-item + .about-proof-item { border-left: 1px solid var(--border-faint); }
+    .about-proof-item h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: -.015em;
+    }
+    .about-proof-item p {
+      max-width: 34ch;
+      color: rgba(255,255,255,.52);
+      font-size: 16px;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* Assessment: the question is the hierarchy */
+    .lead-inner { max-width: 1240px; }
+    .lead-shell {
+      position: relative;
+      min-height: 520px;
+      border: 0;
+      box-shadow: 0 36px 100px rgba(0,9,38,.26), inset 0 1px rgba(255,255,255,.06);
+      overflow: hidden;
+    }
+    .lead-progress {
+      position: absolute;
+      z-index: 4;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: rgba(255,255,255,.12);
+    }
+    .lead-progress-bar {
+      background: linear-gradient(90deg, #0f62fe, #78c7ff);
+      box-shadow: 0 0 16px rgba(67,165,255,.55);
+      transition: width 520ms var(--ease-out);
+    }
+    .lead-panel { min-height: 520px; padding: clamp(54px, 6vw, 78px); }
+    .lead-question { margin-bottom: 46px; }
+    .lead .btn-primary { border: 0; }
+    .lead-continue {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background: rgba(0,8,36,.82);
+      transition: color 180ms ease, background 180ms ease;
+    }
+    .lead-continue::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: -4%;
+      right: -4%;
+      bottom: -14%;
+      height: 128%;
+      background: var(--blue);
+      border-radius: 50% 50% 0 0 / 10px 10px 0 0;
+      transform: translateY(104%);
+      transition: transform 360ms var(--ease-out);
+    }
+    .lead-continue:hover { background: rgba(0,8,36,.82); color: #fff; }
+    .lead-continue:hover::before { transform: translateY(0); }
+
+    /* Consistent section rhythm */
+    .audience,
+    .installed,
+    .team { padding-top: var(--section-space); padding-bottom: var(--section-space); }
+    .team-header,
+    .audience-header,
+    .insys-header { margin-bottom: clamp(48px, 5vw, 72px); }
+
+    @media (max-width: 900px) {
+      :root {
+        --type-section: clamp(38px, 7vw, 46px);
+        --type-feature: clamp(32px, 5.5vw, 38px);
+        --type-body: 18px;
+      }
+      .hscroll-intro-h2,
+      .how-h2,
+      .about-copy .about-h2 { white-space: normal; }
+      .how-header { gap: 24px; }
+      .about-copy { display: grid; grid-template-columns: 1fr; row-gap: 28px; }
+      .about-copy .about-h2,
+      .about-copy .about-origin,
+      .about-copy .about-img-wrap,
+      .about-copy .about-proof { grid-column: 1; grid-row: auto; }
+      .about-copy .about-proof { grid-template-columns: 1fr; margin-top: 18px; }
+      .about-proof-item,
+      .about-proof-item:first-child { padding: 24px 0; }
+      .about-proof-item + .about-proof-item { border-left: 0; border-top: 1px solid var(--border-faint); }
+      .about-proof-item p { font-size: 17px; }
+    }
+
+    @media (max-width: 640px) {
+      :root {
+        --type-section: clamp(36px, 10vw, 42px);
+        --type-feature: clamp(30px, 8.5vw, 36px);
+        --type-body: 17px;
+        --section-space: 84px;
+      }
+      .section-ray { height: 130px; }
+      .hscroll-intro { padding: 52px 0 38px; }
+      .cp-panel-body { font-size: 17px; line-height: 1.62; }
+      .step-primary { font-size: 17px; }
+      .benefit-head > div,
+      .benefit-cell { padding: 20px 15px; }
+      .benefit-cell { font-size: 13px; line-height: 1.48; }
+      .benefit-topic-inline { font-size: 9px; margin-bottom: 7px; }
+      .benefit-live { display: none; }
+      .lead { padding: 84px 18px; }
+      .lead-shell,
+      .lead-panel { min-height: 0; }
+      .lead-panel { padding: 46px 24px 34px; }
+      .lead-question { font-size: clamp(34px, 10vw, 42px); line-height: 1.04; }
+      .lead-helper { font-size: 17px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .benefit-row { opacity: 1; transform: none; transition: none; }
+      .lead-progress-bar,
+      .lead-continue::before { transition: none; }
+      .lead-continue::before { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -4303,7 +4614,7 @@
       <div></div>
     </div>
     <div class="intro-body-grid">
-      <h2 class="intro-h2" id="tw-heading" data-text="MANAGED AUTOMATICALLY." style="visibility:hidden"></h2>
+      <h2 class="intro-h2" id="tw-heading" data-text="Managed automatically." style="visibility:hidden"></h2>
       <div class="intro-body sr">
         <p>
           Traditional pool management relies on schedules — weekly visits, manual testing, reactive fixes. It's a system built around checking in, not staying in control.
@@ -4437,7 +4748,7 @@
   ═══════════════════════════════════════════════ -->
   <div class="hscroll-intro">
     <div class="wrap">
-      <h2 class="hscroll-intro-h2 sr sr-d1">The Highest Standard<br/>in Pool Control.</h2>
+      <h2 class="hscroll-intro-h2 sr sr-d1">The highest standard in pool control.</h2>
       <p class="hscroll-intro-sub sr sr-d2">Premium pool automation for private villas, resorts, hotels, and commercial operators across Europe.</p>
     </div>
   </div>
@@ -4502,7 +4813,7 @@
 
       <div class="how-inner">
         <div class="how-header">
-          <h2 class="how-h2 sr">Installed Once. Managed Always.</h2>
+          <h2 class="how-h2 sr">Installed once. Managed always.</h2>
           <p class="how-sub sr">
             After a single site visit, the system takes over completely. Every reading, every correction, every alert — handled automatically and visible in the app.
           </p>
@@ -4562,7 +4873,7 @@
     <div class="insys-inner">
       <div class="insys-header sr">
         <span class="label">Inside the System</span>
-        <h2 class="insys-h2">ONE INTEGRATED SYSTEM.</h2>
+        <h2 class="insys-h2">One integrated system.</h2>
         <p class="insys-sub">A fully integrated solution designed to install cleanly, operate continuously, and remove the complexity of traditional standalone equipment.</p>
       </div>
       <div class="insys-viewport sr">
@@ -4601,10 +4912,6 @@
           preload="metadata"
           loop
           aria-hidden="true">
-          <!-- TODO: swap src values to black-background alpha renders when ready -->
-          <source src="KW_SG/KW_AssemblyVideo_alpha.mov" type='video/mp4; codecs="hvc1"'>
-          <source src="KW_SG/KW_AssemblyVideo_alpha.webm" type="video/webm; codecs=vp9">
-          <!-- Current fallback: beige-background mp4 (remove when alpha render ships) -->
           <source src="KW_SG/KW_AssemblyVideo.mp4" type="video/mp4">
         </video>
       </div>
@@ -4650,7 +4957,7 @@
         <span class="label">Who It's For</span>
         <h2 class="audience-h2"
           id="audience-tw-heading"
-          data-text="DIFFERENT PROBLEMS. ONE SYSTEM TO SOLVE THEM."
+          data-text="Different problems. One system to solve them."
           style="visibility:hidden"></h2>
         <p class="audience-frame sr">Built for every role in the water management chain, owner, installer, or operator.</p>
       </div>
@@ -4684,7 +4991,7 @@
   <section class="installed">
     <div class="installed-inner">
       <div>
-        <h2 class="installed-h2 sr">WHAT ACTUALLY GETS INSTALLED.</h2>
+        <h2 class="installed-h2 sr">What actually gets installed.</h2>
         <ul class="installed-list">
           <li class="installed-item sr sr-stagger" style="--stagger-delay:0ms">
             <span class="installed-num">01</span>
@@ -4736,13 +5043,9 @@
 
         <!-- ── Left: copy ── -->
         <div class="appvis-copy sr">
-          <div class="appvis-label">Remote Visibility</div>
-          <h2 class="appvis-h2">FULL VISIBILITY.<br />WITHOUT THE WORK.</h2>
+          <h2 class="appvis-h2">Full visibility. Without the work.</h2>
           <div class="appvis-body">
-            <p>You don't need to manage your pool.</p>
-            <p>KONTROLWATER handles everything automatically.</p>
-            <p>But if you want to check status, review performance, or see alerts — it's all available in real time.</p>
-            <p>From anywhere.</p>
+            <p>You don't need to manage your pool. KONTROLWATER handles everything automatically, while giving you real-time access to status, performance and alerts from anywhere.</p>
           </div>
         </div>
 
@@ -4893,46 +5196,39 @@
     <div class="diff-inner">
       <div class="diff-header">
         <h2 class="diff-h2">
-          <span id="diff-line1" class="diff-h2-line1" data-text="TRADITIONAL SYSTEMS REACT." style="visibility:hidden"></span>
-          <span id="diff-line2" class="diff-h2-line2" data-text="KONTROLWATER PREVENTS." style="visibility:hidden"></span>
+          <span id="diff-line1" class="diff-h2-line1" data-text="Traditional systems react." style="visibility:hidden"></span>
+          <span id="diff-line2" class="diff-h2-line2" data-text="KONTROLWATER prevents." style="visibility:hidden"></span>
         </h2>
       </div>
       <div class="benefit-table sr" role="table" aria-label="KONTROLWATER compared with traditional pool systems">
         <div class="benefit-head" role="row">
-          <div class="benefit-head-label" role="columnheader">Capability</div>
           <div class="benefit-col-title" role="columnheader">Traditional systems</div>
           <div class="benefit-col-title benefit-col-title--kw" role="columnheader">
             <span>KONTROLWATER</span><span class="benefit-live">Live</span>
           </div>
         </div>
         <div class="benefit-row" role="row">
-          <div class="benefit-topic" role="rowheader">Monitoring</div>
-          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Scheduled checks leave visibility gaps.</span></div>
+          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span><span class="benefit-topic-inline">Monitoring</span>Scheduled checks leave visibility gaps.</span></div>
           <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>Live readings every 10 seconds.</span></div>
         </div>
         <div class="benefit-row" role="row">
-          <div class="benefit-topic" role="rowheader">Chemistry</div>
-          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Manual tests and adjustment.</span></div>
+          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span><span class="benefit-topic-inline">Chemistry</span>Manual tests and adjustment.</span></div>
           <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>Precise automatic dosing.</span></div>
         </div>
         <div class="benefit-row" role="row">
-          <div class="benefit-topic" role="rowheader">Response</div>
-          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Problems found after impact.</span></div>
+          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span><span class="benefit-topic-inline">Response</span>Problems found after impact.</span></div>
           <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>Immediate automatic correction.</span></div>
         </div>
         <div class="benefit-row" role="row">
-          <div class="benefit-topic" role="rowheader">Prevention</div>
-          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Reactive service callouts.</span></div>
+          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span><span class="benefit-topic-inline">Prevention</span>Reactive service callouts.</span></div>
           <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>Early chemistry and flow alerts.</span></div>
         </div>
         <div class="benefit-row" role="row">
-          <div class="benefit-topic" role="rowheader">Records</div>
-          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Fragmented manual records.</span></div>
+          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span><span class="benefit-topic-inline">Records</span>Fragmented manual records.</span></div>
           <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>Automatic audit-ready records.</span></div>
         </div>
         <div class="benefit-row" role="row">
-          <div class="benefit-topic" role="rowheader">Oversight</div>
-          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Recurring on-site oversight.</span></div>
+          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span><span class="benefit-topic-inline">Oversight</span>Recurring on-site oversight.</span></div>
           <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>24/7 remote autonomous control.</span></div>
         </div>
       </div>
@@ -4947,19 +5243,18 @@
       <div class="about-layout">
         <div class="about-copy">
           <div class="sr">
-            <span class="label">Engineered in Europe</span>
-            <h2 class="about-h2">ENGINEERED IN EUROPE. BUILT FOR PRECISION.</h2>
+            <h2 class="about-h2">Engineered in Europe. Built for precision.</h2>
             <div class="about-img-wrap sr">
               <img class="about-img"
                 src="KW_Media/KW_AI/KW_ENGINEERED_EUROPE.png"
                 alt="KONTROLWATER automated pool-management system engineered in Europe" />
             </div>
-            <p class="about-origin sr">Designed and manufactured in Portugal. Built to industrial standards.</p>
+            <p class="about-origin sr">Designed and manufactured in Portugal to industrial engineering standards.</p>
           </div>
           <ul class="about-proof sr">
-            <li class="about-proof-item"><span class="about-proof-mark"></span>Built by engineers from industrial water treatment and control systems</li>
-            <li class="about-proof-item"><span class="about-proof-mark"></span>Tested and calibrated at our European facility</li>
-            <li class="about-proof-item"><span class="about-proof-mark"></span>Zero fleet-wide failures to date</li>
+            <li class="about-proof-item"><h3>Industrial engineering</h3><p>Built by specialists in industrial water treatment and control.</p></li>
+            <li class="about-proof-item"><h3>European manufacturing</h3><p>Tested and calibrated at our Portuguese facility.</p></li>
+            <li class="about-proof-item"><h3>Reliability</h3><p>Zero fleet-wide failures to date.</p></li>
           </ul>
         </div>
       </div>
@@ -4972,8 +5267,7 @@
   <section class="team" id="team">
     <div class="team-inner">
       <div class="team-header sr">
-        <span class="label">The Team</span>
-        <h2 class="team-h2">THE PEOPLE BEHIND THE SYSTEM.</h2>
+        <h2 class="team-h2">The people behind the system.</h2>
       </div>
       <div class="team-grid">
 
@@ -5014,19 +5308,11 @@
   ═══════════════════════════════════════════════ -->
   <section class="lead" id="contact" aria-labelledby="lead-title">
     <div class="lead-inner">
-      <div class="lead-topline">
-        <span class="label">Private pool assessment</span>
-        <div class="lead-progress" aria-hidden="true">
-          <span class="lead-progress-bar" id="lead-progress"></span>
-        </div>
-        <span class="lead-step-indicator" id="lead-step-label">01 / 03</span>
-      </div>
-
       <form class="lead-shell" id="lead-form" novalidate>
+        <div class="lead-progress" aria-hidden="true"><span class="lead-progress-bar" id="lead-progress"></span></div>
         <input type="hidden" name="pool_type" id="lead-pool-type" />
 
         <div class="lead-panel is-active" data-lead-step="1">
-          <div class="lead-kicker">Let’s start with your pool</div>
           <h2 class="lead-question lead-single-line" id="lead-title">What kind of pool are we looking after?</h2>
           <div class="lead-options" role="group" aria-label="Choose your pool type">
             <button class="lead-option" type="button" data-pool-type="Private villa">
@@ -5328,6 +5614,25 @@
     document.querySelectorAll('.sr').forEach(el => {
       if (!el.closest(staggerSelectors)) srObs.observe(el);
     });
+
+    /* Comparison rows enter individually at reading depth. */
+    (() => {
+      const rows = document.querySelectorAll('.benefit-row');
+      if (!rows.length) return;
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce || !('IntersectionObserver' in window)) {
+        rows.forEach(row => row.classList.add('is-visible'));
+        return;
+      }
+      const rowObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          rowObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.12, rootMargin: '-8% 0px -38% 0px' });
+      rows.forEach(row => rowObserver.observe(row));
+    })();
 
 
 
@@ -6741,9 +7046,11 @@
 
         const progressValue = step === 'success' ? 100 : Number(step) * 33.333;
         progress.style.width = progressValue + '%';
-        stepLabel.textContent = step === 'success'
-          ? 'Complete'
-          : String(step).padStart(2, '0') + ' / 03';
+        if (stepLabel) {
+          stepLabel.textContent = step === 'success'
+            ? 'Complete'
+            : String(step).padStart(2, '0') + ' / 03';
+        }
 
         const activePanel = panels.find(panel => panel.dataset.leadStep === String(step));
         if (activePanel) activePanel.focus({ preventScroll: true });
