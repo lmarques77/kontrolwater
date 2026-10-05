@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KONTROLWATER KW2000 | Smart Pool &amp; Garden Controller</title>
-  <meta name="description" content="KONTROLWATER KW2000 brings pool, spa, water-feature and garden control together in one pre-plumbed, pre-wired wall-mounted system with touchscreen and web access." />
+  <title>KONTROLWATER Rio | Smart Pool &amp; Garden Controller</title>
+  <meta name="description" content="Meet KONTROLWATER Rio, the KW2000 smart pool and garden controller. Pool, spa, water-feature and garden control in one pre-plumbed, pre-wired system." />
   <link rel="icon" href="KW_Media/KW-NEWASSETS/KW_HIGHRES_LOGO.png" type="image/png" />
 
   <script type="application/ld+json">
@@ -13,7 +13,7 @@
     "@graph": [
       {
         "@type": "Product",
-        "name": "KONTROLWATER KW2000",
+        "name": "KONTROLWATER Rio",
         "model": "KW2000",
         "description": "Smart pool and garden controller with integrated filtration control, UV disinfection, salt chlorination, pH dosing, spa and water-feature control, and remote web access.",
         "brand": { "@type": "Brand", "name": "KONTROLWATER" },
@@ -254,11 +254,6 @@
       padding: 0 var(--pad) clamp(64px, 8vh, 100px);
       max-width: var(--max); margin: 0 auto; width: 100%;
     }
-    .hero-product {
-      display: block;
-      margin-bottom: 18px;
-      color: rgba(112,180,255,.9);
-    }
     .hero-h1 {
       font-size: clamp(52px, 8vw, 118px);
       font-weight: 700;
@@ -363,6 +358,101 @@
       background: var(--border-faint);
       margin-bottom: 36px;
     }
+
+    /* ─────────────────────────────────────────────────────
+       RIO INTRO — immediate product and system story
+    ─────────────────────────────────────────────────────── */
+    .rio-intro {
+      padding: clamp(104px, 10vw, 152px) var(--pad) 42px;
+      overflow: hidden;
+    }
+    .rio-intro-grid {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(520px, 1.1fr);
+      align-items: center;
+      gap: clamp(52px, 7vw, 112px);
+    }
+    .rio-copy { max-width: 660px; }
+    .rio-label {
+      display: block;
+      margin-bottom: 24px;
+      color: rgba(104,174,255,.9);
+    }
+    .rio-h2 {
+      font-size: clamp(48px, 4.5vw, 68px);
+      line-height: 1.01;
+      letter-spacing: -.045em;
+      font-weight: 600;
+      text-wrap: balance;
+      margin-bottom: 30px;
+    }
+    .rio-h2 span { display: block; }
+    .rio-h2 span + span { color: rgba(255,255,255,.72); }
+    .rio-body {
+      max-width: 610px;
+      color: rgba(255,255,255,.58);
+      font-size: clamp(18px, 1.35vw, 20px);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+    .rio-visual {
+      position: relative;
+      min-height: clamp(620px, 54vw, 760px);
+      display: grid;
+      place-items: center;
+      isolation: isolate;
+    }
+    .rio-visual::before {
+      content: '';
+      position: absolute;
+      width: 76%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(15,98,254,.13), transparent 68%);
+      filter: blur(14px);
+      z-index: -1;
+    }
+    .rio-product-img {
+      width: auto;
+      max-width: 100%;
+      max-height: 760px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      filter: drop-shadow(0 32px 60px rgba(0,0,0,.55));
+    }
+    .rio-flow-map {
+      position: absolute;
+      inset: 3% 7% 4%;
+      width: 86%;
+      height: 93%;
+      pointer-events: none;
+      overflow: visible;
+    }
+    .rio-flow-base,
+    .rio-flow-active {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .rio-flow-base { stroke: rgba(83,161,255,.16); stroke-width: 3; }
+    .rio-flow-active {
+      stroke: rgba(73,164,255,.9);
+      stroke-width: 5;
+      stroke-dasharray: 18 14;
+      filter: drop-shadow(0 0 8px rgba(49,148,255,.7));
+      animation: rio-flow 2.6s linear infinite;
+    }
+    .rio-flow-node {
+      fill: rgba(15,98,254,.25);
+      stroke: rgba(91,178,255,.9);
+      stroke-width: 3;
+      filter: drop-shadow(0 0 8px rgba(49,148,255,.7));
+    }
+    @keyframes rio-flow { to { stroke-dashoffset: -64; } }
+    .rio-intro + .metrics { margin-top: 12px; }
 
     /* ─────────────────────────────────────────────────────
        KEY METRICS BAR
@@ -539,13 +629,13 @@
     }
     .insys-viewport {
       position: relative;
-      width: 100vw;
-      margin-left: calc(50% - 50vw);
-      margin-right: calc(50% - 50vw);
+      width: min(100%, 1120px);
+      height: clamp(520px, 55vw, 760px);
+      margin-left: auto;
+      margin-right: auto;
       margin-bottom: 56px;
-      aspect-ratio: 16 / 9;
       overflow: hidden;
-      background: #000;
+      background: radial-gradient(circle at 50% 46%, rgba(15,98,254,.08), transparent 58%);
     }
     .insys-video {
       width: 100%; height: 100%;
@@ -559,10 +649,11 @@
       .insys-fallback { display: block !important; }
     }
     .insys-fallback {
-      display: none;
+      display: block;
       width: 100%; height: 100%;
       object-fit: contain;
       object-position: center;
+      filter: drop-shadow(0 30px 64px rgba(0,0,0,.58));
     }
     .insys-callouts {
       display: flex;
@@ -3720,7 +3811,7 @@
     .cp-sticky {
       position: sticky; top: 0; height: 100vh;
       overflow: hidden;
-      display: grid; grid-template-columns: 52% 48%;
+      display: grid; grid-template-columns: 60% 40%;
       isolation: isolate;
     }
 
@@ -3734,8 +3825,8 @@
     }
     .cp-modules {
       position: relative;
-      width: min(100%, 760px);
-      aspect-ratio: 3 / 2;
+      width: min(100%, 640px);
+      aspect-ratio: 1165 / 1350;
       isolation: isolate;
     }
     /* Each module card — stacked, fanned by JS position classes */
@@ -3779,11 +3870,11 @@
     }
     .cp-mod::after { content: ''; position: absolute; inset: 37%; border-radius: 50%; border: 1px solid transparent; transition: border-color .3s, box-shadow .3s, background .3s; }
     .cp-mod.cp-pos-active::after { border-color: rgba(108,190,255,.9); background: rgba(42,143,255,.2); box-shadow: 0 0 0 8px rgba(23,113,255,.08), 0 0 24px rgba(23,113,255,.7); }
-    .cp-hot-sense { left: 12%; top: 25%; }
-    .cp-hot-dose { left: 35%; top: 65%; }
-    .cp-hot-filter { left: 50%; top: 49%; }
-    .cp-hot-circulate { right: 6%; top: 53%; }
-    .cp-hot-predict { right: 16%; top: 20%; }
+    .cp-hot-sense { left: 48%; top: 40%; }
+    .cp-hot-dose { left: 52%; top: 24%; }
+    .cp-hot-filter { left: 39%; top: 71%; }
+    .cp-hot-circulate { right: 1%; top: 51%; }
+    .cp-hot-predict { left: 14%; top: 46%; }
     .cp-mod-name, .cp-face { display: none; }
 
     .cp-modules[data-mode="0"] .cp-sense,
@@ -3875,7 +3966,7 @@
     .cp-copy {
       position: relative;
       display: flex; flex-direction: column; justify-content: center;
-      padding: 60px 64px 60px 56px;
+      padding: 60px 48px 60px 46px;
     }
     /* Progress rail */
     .cp-rail {
@@ -3895,7 +3986,7 @@
     .cp-panel {
       position: absolute;
       top: 50%; transform: translateY(calc(-50% + 24px));
-      left: 56px; right: 64px;
+      left: 46px; right: 48px;
       opacity: 0; pointer-events: none;
       transition: opacity 0.55s cubic-bezier(.16,1,.3,1), transform 0.55s cubic-bezier(.16,1,.3,1);
     }
@@ -3938,6 +4029,188 @@
     }
     @media (prefers-reduced-motion: reduce) {
       .cp-mod, .cp-panel { transition: none; }
+    }
+
+    /* Rio 3D — a restrained, scroll-directed product cutaway. */
+    .cp-stage { padding: 42px 22px 34px 34px; }
+    .cp-modules {
+      width: 100%;
+      max-width: none;
+      height: min(78vh, 760px);
+      aspect-ratio: auto;
+    }
+    .rio-3d-stage {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      isolation: isolate;
+      background:
+        radial-gradient(circle at 50% 44%, rgba(18, 62, 120, .16), transparent 44%),
+        linear-gradient(180deg, rgba(4, 8, 14, .24), rgba(0, 0, 0, .72));
+    }
+    .rio-3d-stage::before {
+      content: '';
+      position: absolute;
+      inset: 10% 6%;
+      z-index: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(65, 137, 219, .045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(65, 137, 219, .045) 1px, transparent 1px);
+      background-size: 62px 62px;
+      -webkit-mask-image: radial-gradient(ellipse, #000 12%, transparent 72%);
+      mask-image: radial-gradient(ellipse, #000 12%, transparent 72%);
+    }
+    .rio-3d-canvas,
+    .rio-3d-fallback {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+    }
+    .rio-3d-canvas { display: block; cursor: default; opacity: 0; transition: opacity .7s ease; }
+    .rio-3d-stage.is-loaded .rio-3d-canvas { opacity: 1; }
+    .rio-3d-fallback {
+      object-fit: contain;
+      padding: 6%;
+      opacity: .78;
+      filter: saturate(.84) brightness(.74);
+      transition: opacity .45s ease;
+    }
+    .rio-3d-stage.is-loaded .rio-3d-fallback { opacity: 0; }
+    .rio-3d-stage.is-loaded[data-stage="3"] .rio-3d-fallback,
+    .rio-3d-stage.is-loaded[data-stage="4"] .rio-3d-fallback {
+      z-index: 2;
+      opacity: .94;
+      filter: saturate(.92) brightness(.82) contrast(1.04);
+    }
+    .rio-3d-stage.is-loaded[data-stage="3"] .rio-3d-canvas,
+    .rio-3d-stage.is-loaded[data-stage="4"] .rio-3d-canvas {
+      z-index: 3;
+      opacity: .46;
+      mix-blend-mode: screen;
+    }
+    .rio-3d-stage.is-fallback .rio-3d-fallback { opacity: .86; }
+    .rio-3d-loading {
+      position: absolute;
+      left: 5%;
+      bottom: 5%;
+      z-index: 6;
+      display: grid;
+      gap: 8px;
+      width: min(240px, 42%);
+      font: 9px/1 var(--mono);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(201, 226, 255, .72);
+    }
+    .rio-3d-loading[hidden],
+    .rio-3d-fallback[hidden] { display: none !important; }
+    .rio-3d-stage.is-loaded .rio-3d-loading { display: none !important; }
+    .rio-3d-loading i {
+      height: 1px;
+      overflow: hidden;
+      background: rgba(255,255,255,.10);
+    }
+    .rio-3d-loading-bar {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: #55adff;
+      box-shadow: 0 0 12px rgba(54, 151, 255, .8);
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform .2s linear;
+    }
+    .rio-3d-mode {
+      position: absolute;
+      top: 4.5%;
+      left: 5%;
+      z-index: 5;
+      display: grid;
+      gap: 7px;
+      pointer-events: none;
+      text-transform: uppercase;
+    }
+    .rio-3d-mode span {
+      font: 600 11px/1 var(--mono);
+      letter-spacing: .22em;
+      color: #73bcff;
+    }
+    .rio-3d-mode small {
+      font: 8px/1 var(--mono);
+      letter-spacing: .14em;
+      color: rgba(196, 220, 247, .48);
+    }
+    .rio-3d-explore {
+      position: absolute;
+      right: 4.5%;
+      bottom: 4.5%;
+      z-index: 7;
+      min-width: 112px;
+      padding: 10px 13px;
+      border: 1px solid rgba(84, 171, 255, .34);
+      background: rgba(2, 7, 15, .68);
+      color: rgba(215, 235, 255, .82);
+      font: 8px/1 var(--mono);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: border-color .25s, color .25s, background .25s;
+    }
+    .rio-3d-explore:hover,
+    .rio-3d-explore[aria-pressed="true"] {
+      border-color: rgba(92, 183, 255, .78);
+      background: rgba(16, 74, 139, .34);
+      color: #fff;
+    }
+    .rio-3d-stage.is-exploring .rio-3d-canvas { cursor: grab; }
+    .rio-3d-stage.is-exploring .rio-3d-canvas:active { cursor: grabbing; }
+    .rio-3d-scan {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateX(-112%);
+      background: linear-gradient(100deg, transparent 35%, rgba(74, 164, 255, .05) 49%, rgba(125, 201, 255, .25) 50%, rgba(74, 164, 255, .04) 51%, transparent 66%);
+    }
+    .rio-3d-stage.is-switching .rio-3d-scan { animation: rio-stage-scan .58s cubic-bezier(.22,.7,.26,1); }
+    @keyframes rio-stage-scan {
+      0% { opacity: 0; transform: translateX(-112%); }
+      18% { opacity: 1; }
+      100% { opacity: 0; transform: translateX(112%); }
+    }
+    .rio-3d-corners {
+      position: absolute;
+      inset: 3.5%;
+      z-index: 3;
+      pointer-events: none;
+      opacity: .32;
+      background:
+        linear-gradient(#5fb5ff,#5fb5ff) left top/36px 1px no-repeat,
+        linear-gradient(#5fb5ff,#5fb5ff) left top/1px 36px no-repeat,
+        linear-gradient(#5fb5ff,#5fb5ff) right bottom/36px 1px no-repeat,
+        linear-gradient(#5fb5ff,#5fb5ff) right bottom/1px 36px no-repeat;
+    }
+    .cp-mod {
+      opacity: 0 !important;
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      .cp-stage { padding: 12px 12px 10px; }
+      .cp-modules { width: 100%; height: min(49svh, 520px); }
+      .rio-3d-mode { top: 5%; left: 5%; }
+      .rio-3d-explore { right: 4%; bottom: 4%; }
+      .rio-3d-fallback { padding: 2%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .rio-3d-canvas,
+      .rio-3d-fallback { transition: none; }
+      .rio-3d-stage.is-switching .rio-3d-scan { animation: none; }
     }
 
     /* ─── SECTION DIVIDER: blue LED ray ── */
@@ -4510,6 +4783,16 @@
       .about-proof-item:first-child { padding: 24px 0; }
       .about-proof-item + .about-proof-item { border-left: 0; border-top: 1px solid var(--border-faint); }
       .about-proof-item p { font-size: 17px; }
+      .rio-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+      .rio-copy { max-width: 720px; }
+      .rio-visual {
+        min-height: 620px;
+        width: min(100%, 760px);
+        margin: 0 auto;
+      }
     }
 
     @media (max-width: 640px) {
@@ -4534,6 +4817,19 @@
       .lead-panel { padding: 46px 24px 34px; }
       .lead-question { font-size: clamp(34px, 10vw, 42px); line-height: 1.04; }
       .lead-helper { font-size: 17px; }
+      .rio-intro { padding: 84px 20px 24px; }
+      .rio-h2 {
+        font-size: clamp(40px, 11vw, 52px);
+        margin-bottom: 24px;
+      }
+      .rio-body { font-size: 17px; }
+      .rio-visual {
+        min-height: 510px;
+        margin-inline: -10px;
+        width: calc(100% + 20px);
+      }
+      .rio-product-img { max-height: 500px; }
+      .rio-flow-map { inset: 3% 5% 5%; width: 90%; height: 92%; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -4541,6 +4837,844 @@
       .lead-progress-bar,
       .lead-continue::before { transition: none; }
       .lead-continue::before { display: none; }
+      .rio-flow-active { animation: none; }
+    }
+
+    /* ══════════════════════════════════════════════════
+       PROFESSIONALISATION PASS — guided Rio story
+    ══════════════════════════════════════════════════ */
+    .hero-actions { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+    .hero-actions .btn-ghost {
+      background:rgba(0,0,0,.22);
+      border-color:rgba(255,255,255,.3);
+      backdrop-filter:blur(10px);
+    }
+
+    .cp-wrap { height: 430vh; }
+    .cp-sticky { grid-template-columns:minmax(0,58%) minmax(360px,42%); }
+    .cp-stage {
+      padding:clamp(28px,4vw,58px);
+      background:
+        radial-gradient(circle at 55% 46%, rgba(28,100,186,.15), transparent 38%),
+        linear-gradient(180deg,#02050a,#000);
+    }
+    .cp-modules { height:min(84vh,820px); width:100%; }
+    .rio-story {
+      position:absolute;
+      inset:0;
+      overflow:hidden;
+      isolation:isolate;
+      background:
+        linear-gradient(rgba(65,137,219,.035) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(65,137,219,.035) 1px,transparent 1px);
+      background-size:72px 72px;
+      -webkit-mask-image:radial-gradient(ellipse at center,#000 42%,transparent 86%);
+      mask-image:radial-gradient(ellipse at center,#000 42%,transparent 86%);
+    }
+    .rio-story::after {
+      content:'';
+      position:absolute;
+      inset:auto 8% 2%;
+      height:22%;
+      z-index:0;
+      border-radius:50%;
+      background:radial-gradient(ellipse,rgba(25,105,210,.18),transparent 68%);
+      filter:blur(18px);
+    }
+    .rio-story-glow {
+      position:absolute;
+      inset:8% 8% 12%;
+      z-index:0;
+      background:radial-gradient(circle at 60% 43%,rgba(42,134,255,.16),transparent 48%);
+      filter:blur(28px);
+      transition:transform .9s var(--ease-out),opacity .9s;
+    }
+    .rio-story-product {
+      position:absolute;
+      inset:2% 4% 3%;
+      z-index:1;
+      width:92%;
+      height:95%;
+      object-fit:contain;
+      filter:saturate(.9) brightness(.87) contrast(1.04) drop-shadow(0 32px 50px rgba(0,0,0,.6));
+      transform-origin:center;
+      transition:transform .9s cubic-bezier(.16,1,.3,1),filter .8s ease;
+    }
+    .rio-story-flow {
+      position:absolute;
+      inset:2% 4% 3%;
+      z-index:2;
+      width:92%;
+      height:95%;
+      overflow:visible;
+      pointer-events:none;
+      transition:transform .9s cubic-bezier(.16,1,.3,1);
+    }
+    .rio-path { opacity:0; transition:opacity .45s ease; }
+    .rio-path path {
+      fill:none;
+      stroke:#56b2ff;
+      stroke-width:7;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+      stroke-dasharray:15 20;
+      filter:url(#rioFlowGlow);
+      animation:rio-water-path 1.45s linear infinite;
+    }
+    .rio-path--backwash path { stroke:#bd8053; animation-direction:reverse; }
+    @keyframes rio-water-path { to { stroke-dashoffset:-70; } }
+
+    .cp-modules[data-mode="0"] .rio-path--sense,
+    .cp-modules[data-mode="1"] .rio-path--disinfect,
+    .cp-modules[data-mode="2"] .rio-path--dose,
+    .cp-modules[data-mode="3"] .rio-path--route,
+    .cp-modules[data-mode="4"] .rio-path--backwash { opacity:.82; }
+
+    .cp-modules[data-mode="0"] .rio-story-product,
+    .cp-modules[data-mode="0"] .rio-story-flow { transform:translate(-2%,-3%) scale(1.08); }
+    .cp-modules[data-mode="1"] .rio-story-product,
+    .cp-modules[data-mode="1"] .rio-story-flow { transform:translate(-4%,4%) scale(1.1); }
+    .cp-modules[data-mode="2"] .rio-story-product,
+    .cp-modules[data-mode="2"] .rio-story-flow { transform:translate(-2%,-4%) scale(1.05); }
+    .cp-modules[data-mode="3"] .rio-story-product,
+    .cp-modules[data-mode="3"] .rio-story-flow { transform:translate(0,0) scale(.94); }
+    .cp-modules[data-mode="4"] .rio-story-product,
+    .cp-modules[data-mode="4"] .rio-story-flow { transform:translate(7%,1%) scale(1.04); }
+
+    .rio-story-focus {
+      position:absolute;
+      z-index:4;
+      display:grid;
+      gap:5px;
+      max-width:190px;
+      padding:12px 14px;
+      opacity:0;
+      transform:translateY(10px);
+      border-left:1px solid rgba(91,178,255,.72);
+      background:linear-gradient(90deg,rgba(4,13,28,.88),rgba(4,13,28,.2));
+      backdrop-filter:blur(8px);
+      transition:opacity .45s ease .15s,transform .55s var(--ease-out) .15s;
+      pointer-events:none;
+    }
+    .rio-story-focus span {
+      color:#eaf5ff;
+      font:500 10px/1.2 var(--mono);
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    .rio-story-focus small { color:rgba(210,229,248,.54); font-size:10px; line-height:1.45; }
+    .rio-story-focus--sense { left:50%; top:48%; }
+    .rio-story-focus--disinfect { left:49%; top:27%; }
+    .rio-story-focus--dose { left:36%; bottom:16%; }
+    .rio-story-focus--route { right:7%; top:43%; }
+    .rio-story-focus--backwash { left:5%; top:55%; }
+    .cp-modules[data-mode="0"] .rio-story-focus--sense,
+    .cp-modules[data-mode="1"] .rio-story-focus--disinfect,
+    .cp-modules[data-mode="2"] .rio-story-focus--dose,
+    .cp-modules[data-mode="3"] .rio-story-focus--route,
+    .cp-modules[data-mode="4"] .rio-story-focus--backwash { opacity:1; transform:none; }
+    .rio-story-legend {
+      position:absolute;
+      left:4%;
+      top:4%;
+      z-index:5;
+      display:flex;
+      align-items:center;
+      gap:9px;
+      color:rgba(198,220,244,.42);
+      font:8px/1 var(--mono);
+      letter-spacing:.17em;
+      text-transform:uppercase;
+    }
+    .rio-story-legend i { width:22px; height:1px; background:#4ca9ff; box-shadow:0 0 10px rgba(53,152,255,.8); }
+    .cp-panel-h3 { text-transform:none; }
+    .cp-panel-body { max-width:35ch; }
+
+    /* Product scope: separates the controller from site equipment. */
+    .scope {
+      padding:var(--section-space) var(--pad);
+      background:linear-gradient(180deg,#02060d,#071328 55%,#02060d);
+      border-top:1px solid rgba(255,255,255,.05);
+      border-bottom:1px solid rgba(255,255,255,.05);
+    }
+    .scope-inner { max-width:var(--max); margin:0 auto; }
+    .scope-header { display:grid; grid-template-columns:minmax(0,.78fr) minmax(360px,1.22fr); column-gap:clamp(44px,7vw,120px); align-items:end; }
+    .scope-header .label { grid-column:1/-1; margin-bottom:28px; }
+    .scope-h2 {
+      font-size:var(--type-section);
+      line-height:1.02;
+      letter-spacing:-.045em;
+      font-weight:600;
+      max-width:12ch;
+    }
+    .scope-lead { max-width:48ch; color:rgba(255,255,255,.64); font-size:var(--type-body); line-height:1.65; }
+    .scope-grid { display:grid; grid-template-columns:repeat(3,1fr); margin-top:clamp(56px,7vw,92px); border:1px solid rgba(115,174,238,.18); }
+    .scope-card { min-height:300px; padding:clamp(28px,3.2vw,48px); background:rgba(3,9,19,.56); }
+    .scope-card + .scope-card { border-left:1px solid rgba(115,174,238,.18); }
+    .scope-index { display:block; margin-bottom:clamp(64px,8vw,118px); color:#4aa5ff; font:10px/1 var(--mono); letter-spacing:.18em; }
+    .scope-card h3 { margin-bottom:16px; font-size:clamp(23px,2vw,30px); font-weight:500; letter-spacing:-.025em; }
+    .scope-card p { color:rgba(255,255,255,.57); font-size:16px; line-height:1.65; }
+    .scope-note { display:flex; align-items:center; justify-content:space-between; gap:32px; padding:26px 0 0; }
+    .scope-note p { display:flex; gap:18px; align-items:baseline; color:rgba(255,255,255,.45); font-size:13px; line-height:1.55; }
+    .scope-note strong { color:rgba(255,255,255,.82); font:500 10px/1 var(--mono); letter-spacing:.15em; text-transform:uppercase; white-space:nowrap; }
+    .scope-note a { flex:none; color:#78baff; font-size:13px; }
+
+    .installed-intro { margin:24px 0 42px; max-width:48ch; color:rgba(255,255,255,.58); font-size:var(--type-body); line-height:1.65; }
+    .installed-visual { position:relative; display:grid; place-items:center; background:radial-gradient(circle,rgba(29,102,190,.12),transparent 64%); }
+    .installed-diagram { width:100%; height:auto; max-height:720px; object-fit:contain; filter:saturate(.9) brightness(.86); }
+    .installed-caption { position:absolute; right:18px; bottom:16px; max-width:34ch; color:rgba(255,255,255,.38); font:8px/1.5 var(--mono); letter-spacing:.11em; text-transform:uppercase; text-align:right; }
+    .team-avatar--initials { display:grid; place-items:center; background:linear-gradient(145deg,#0c1d38,#05080d); color:#78baff; font:500 24px/1 var(--mono); letter-spacing:.1em; border:1px solid rgba(99,170,242,.22); }
+    .lead-privacy { margin-top:18px; color:rgba(255,255,255,.38); font-size:11px; line-height:1.5; }
+    .how-filtering { display:none !important; }
+
+    @media (max-width:900px) {
+      .scope-header { grid-template-columns:1fr; gap:24px; }
+      .scope-h2 { max-width:15ch; }
+      .scope-grid { grid-template-columns:1fr; }
+      .scope-card { min-height:auto; }
+      .scope-card + .scope-card { border-left:0; border-top:1px solid rgba(115,174,238,.18); }
+      .scope-index { margin-bottom:42px; }
+    }
+    @media (max-width:768px) {
+      .hero-actions { align-items:stretch; }
+      .hero-actions a { justify-content:center; }
+      .cp-wrap { height:400vh; }
+      .cp-sticky { grid-template-columns:unset; }
+      .cp-stage { padding:8px 10px 2px; }
+      .cp-modules { height:min(50svh,500px); }
+      .rio-story { background-size:44px 44px; }
+      .rio-story-product,
+      .rio-story-flow { inset:1%; width:98%; height:98%; }
+      .cp-modules[data-mode] .rio-story-product,
+      .cp-modules[data-mode] .rio-story-flow { transform:scale(.96); }
+      .rio-story-focus { max-width:150px; padding:9px 10px; }
+      .rio-story-focus span { font-size:8px; }
+      .rio-story-focus small { font-size:8px; }
+      .rio-story-focus--sense { left:48%; top:45%; }
+      .rio-story-focus--disinfect { left:44%; top:24%; }
+      .rio-story-focus--dose { left:32%; bottom:13%; }
+      .rio-story-focus--route { right:2%; top:42%; }
+      .rio-story-focus--backwash { left:2%; top:53%; }
+      .rio-story-legend { left:3%; top:3%; font-size:7px; }
+      .cp-copy { min-height:38svh; }
+      .scope { padding:84px 20px; }
+      .scope-note { align-items:flex-start; flex-direction:column; }
+      .scope-note p { align-items:flex-start; flex-direction:column; gap:8px; }
+      .installed-caption { position:static; margin-top:12px; text-align:left; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .rio-story-product,
+      .rio-story-flow,
+      .rio-story-focus,
+      .rio-story-glow { transition:none; }
+      .rio-path path { animation:none; stroke-dasharray:none; }
+    }
+    /* ══════════════════════════════════════════════════
+       OCTOBER REFINEMENT — installation, remote UI, form
+    ══════════════════════════════════════════════════ */
+    .installed-h2 { max-width: 15ch; }
+    .installed-item { align-items: center; gap: 24px; padding: 26px 0; }
+    .installed-icon {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 54px;
+      height: 54px;
+      flex: 0 0 54px;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.14);
+      background: radial-gradient(circle at 50% 45%, rgba(15,98,254,.22), rgba(15,98,254,.035) 62%, transparent 63%);
+      box-shadow: inset 0 0 28px rgba(15,98,254,.08), 0 0 28px rgba(15,98,254,.05);
+    }
+    .installed-icon svg { width: 34px; height: 34px; overflow: visible; }
+    .installed-icon path,
+    .installed-icon circle {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.35;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .installed-icon-orbit {
+      stroke-dasharray: 3 5;
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: installed-orbit 7s linear infinite;
+    }
+    .installed-icon-flow {
+      stroke-dasharray: 6 5;
+      animation: installed-flow 2.4s linear infinite;
+    }
+    .installed-icon-shield {
+      animation: installed-shield 2.8s ease-in-out infinite;
+    }
+    @keyframes installed-orbit { to { transform: rotate(360deg); } }
+    @keyframes installed-flow { to { stroke-dashoffset: -22; } }
+    @keyframes installed-shield { 50% { stroke: #62b3ff; filter: drop-shadow(0 0 5px rgba(76,166,255,.58)); } }
+
+    .appvis { background: linear-gradient(180deg, #000, #020713 18%, #020713 82%, #000); }
+    .appvis-sticky::before {
+      background:
+        radial-gradient(circle at 73% 44%, rgba(19,101,255,.16), transparent 27%),
+        radial-gradient(ellipse 52% 76% at 78% 52%, rgba(26,102,205,.09), transparent 70%),
+        linear-gradient(90deg, transparent 49.9%, rgba(255,255,255,.035) 50%, transparent 50.1%);
+    }
+    .appvis-inner { grid-template-columns: minmax(0,.9fr) minmax(390px,1.1fr); gap: clamp(58px, 8vw, 126px); }
+    .appvis-body p { max-width: 39ch; }
+    .appvis-phone-wrap { position: relative; }
+    .appvis-phone-wrap::before {
+      content: '';
+      position: absolute;
+      width: min(48vw, 590px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(15,98,254,.16), rgba(15,98,254,.045) 34%, transparent 68%);
+      filter: blur(4px);
+      animation: kw-aura 7s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes kw-aura { 50% { transform: scale(1.055); opacity: .76; } }
+    .appvis-phone {
+      width: min(30vw, 410px);
+      min-width: 360px;
+      height: min(72vh, 690px);
+      min-height: 620px;
+      border-radius: 38px;
+      background: linear-gradient(145deg, #252c38, #080b10 32%, #151b24 72%, #05070a);
+      border: 1px solid rgba(185,216,255,.21);
+      box-shadow:
+        inset 0 1px rgba(255,255,255,.16),
+        inset 0 -1px rgba(255,255,255,.05),
+        0 70px 180px rgba(0,0,0,.76),
+        0 0 100px rgba(15,98,254,.12);
+      transform: perspective(1200px) rotateY(-4deg) rotateX(1deg);
+      transition: transform .55s var(--ease-out), box-shadow .55s ease;
+    }
+    .appvis-phone:hover {
+      transform: perspective(1200px) rotateY(0) rotateX(0) translateY(-4px);
+      box-shadow: inset 0 1px rgba(255,255,255,.18), 0 80px 190px rgba(0,0,0,.8), 0 0 120px rgba(15,98,254,.18);
+    }
+    .appvis-pill { width: 78px; height: 22px; top: 12px; }
+    .appvis-screen { inset: 6px; border-radius: 32px; background: linear-gradient(155deg, #07101f, #020408 50%, #07101b); }
+    .appvis-screen::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(102,172,255,.026) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(102,172,255,.026) 1px, transparent 1px);
+      background-size: 28px 28px;
+      -webkit-mask-image: linear-gradient(to bottom, #000, transparent 58%);
+      mask-image: linear-gradient(to bottom, #000, transparent 58%);
+      pointer-events: none;
+    }
+    .app-state { padding: 54px 24px 24px; transform: translateY(16px) scale(.985); transition: opacity .48s var(--ease-out), transform .48s var(--ease-out); }
+    .app-state.active { transform: none; }
+    .kw-app-bar { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:18px; }
+    .kw-app-bar > div { display:grid; gap:4px; }
+    .kw-app-brand { color:rgba(149,196,255,.54); font:8px/1 var(--mono); letter-spacing:.16em; }
+    .kw-app-bar strong { color:#fff; font-size:17px; font-weight:520; letter-spacing:-.02em; }
+    .kw-app-live,
+    .kw-app-date { display:flex; align-items:center; gap:6px; color:rgba(255,255,255,.53); font:8px/1 var(--mono); letter-spacing:.08em; text-transform:uppercase; }
+    .kw-app-live i { width:5px; height:5px; border-radius:50%; background:#53e59d; box-shadow:0 0 10px #53e59d; animation:app-pulse 2s ease-in-out infinite; }
+    .kw-water-card {
+      display:grid;
+      grid-template-columns: 126px 1fr;
+      gap:18px;
+      align-items:center;
+      padding:18px;
+      border:1px solid rgba(109,178,255,.16);
+      background:linear-gradient(135deg, rgba(29,91,181,.17), rgba(255,255,255,.025));
+      box-shadow:inset 0 1px rgba(255,255,255,.04);
+    }
+    .kw-water-orbit { position:relative; display:grid; place-items:center; width:116px; height:116px; border-radius:50%; background:radial-gradient(circle, rgba(15,98,254,.19), transparent 63%); }
+    .kw-water-orbit::before,
+    .kw-water-orbit-ring { content:''; position:absolute; inset:7px; border-radius:50%; border:1px solid rgba(99,175,255,.2); }
+    .kw-water-orbit-ring { border-color:#55acff transparent #176eff #55acff; filter:drop-shadow(0 0 5px rgba(61,151,255,.6)); animation:installed-orbit 9s linear infinite; }
+    .kw-water-orbit strong { margin-top:-7px; color:#fff; font:500 32px/1 var(--mono); letter-spacing:-.07em; }
+    .kw-water-orbit strong small { font-size:12px; letter-spacing:0; color:#7fc1ff; }
+    .kw-water-orbit em { position:absolute; top:68px; font:normal 7px/1 var(--mono); letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.42); }
+    .kw-water-summary { min-width:0; }
+    .kw-water-summary > span { display:block; margin-bottom:7px; color:#61afff; font:8px/1 var(--mono); letter-spacing:.13em; text-transform:uppercase; }
+    .kw-water-summary > strong { display:block; max-width:15ch; color:#fff; font-size:14px; font-weight:450; line-height:1.28; }
+    .kw-sparkline { display:block; width:100%; height:42px; margin-top:12px; overflow:visible; }
+    .kw-spark-area { fill:url(#kw-chart-fill); }
+    .kw-spark-line { fill:none; stroke:#5ab0ff; stroke-width:1.5; stroke-linecap:round; filter:drop-shadow(0 0 4px rgba(67,156,255,.65)); stroke-dasharray:180; animation:kw-chart 2.2s var(--ease-out) both; }
+    @keyframes kw-chart { from { stroke-dashoffset:180; } to { stroke-dashoffset:0; } }
+    .kw-metric-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:10px; }
+    .kw-metric { padding:13px 11px 12px; border:1px solid rgba(255,255,255,.07); background:rgba(255,255,255,.028); }
+    .kw-metric > span { display:block; min-height:18px; color:rgba(255,255,255,.36); font:7px/1.25 var(--mono); letter-spacing:.09em; text-transform:uppercase; }
+    .kw-metric strong { display:block; margin:5px 0 6px; color:#fff; font:500 20px/1 var(--mono); }
+    .kw-metric sup { margin-left:2px; color:rgba(255,255,255,.42); font-size:8px; }
+    .kw-metric small { color:#53e59d; font:7px/1 var(--mono); letter-spacing:.08em; text-transform:uppercase; }
+    .kw-quick-row { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:auto; padding-top:12px; }
+    .kw-remote-toggle { font:inherit; cursor:pointer; }
+    .kw-quick-row button { display:flex; align-items:center; justify-content:center; gap:7px; min-height:45px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.025); color:rgba(255,255,255,.48); transition:.25s ease; }
+    .kw-quick-row button i { color:#7ebdff; font-style:normal; }
+    .kw-quick-row button span { font-size:10px; }
+    .kw-quick-row button.is-on { color:#fff; border-color:rgba(70,159,255,.34); background:rgba(15,98,254,.16); box-shadow:inset 0 0 22px rgba(15,98,254,.08); }
+
+    .kw-control-feature { position:relative; overflow:hidden; display:flex; align-items:center; justify-content:space-between; min-height:142px; padding:20px; border:1px solid rgba(75,159,255,.22); background:linear-gradient(135deg, rgba(15,98,254,.2), rgba(255,255,255,.025)); }
+    .kw-control-copy { position:relative; z-index:2; display:grid; gap:5px; }
+    .kw-control-copy span { color:#77bbff; font:8px/1 var(--mono); letter-spacing:.12em; text-transform:uppercase; }
+    .kw-control-copy strong { color:#fff; font-size:20px; font-weight:500; }
+    .kw-control-copy small { color:rgba(255,255,255,.42); font:8px/1 var(--mono); }
+    .kw-switch { position:relative; z-index:3; width:48px; height:26px; border:1px solid rgba(255,255,255,.15); border-radius:20px; background:rgba(255,255,255,.08); transition:.25s; }
+    .kw-switch span { position:absolute; top:3px; left:3px; width:18px; height:18px; border-radius:50%; background:#fff; transition:transform .25s var(--ease-out); }
+    .kw-switch.is-on { background:#0f62fe; border-color:#408dff; box-shadow:0 0 24px rgba(15,98,254,.28); }
+    .kw-switch.is-on span { transform:translateX(21px); }
+    .kw-flow-lines { position:absolute; right:20px; bottom:9px; display:flex; align-items:flex-end; gap:4px; opacity:.42; }
+    .kw-flow-lines i { width:2px; height:18px; background:#5aacff; box-shadow:0 0 8px #2e8eff; animation:kw-bars 1.25s ease-in-out infinite alternate; }
+    .kw-flow-lines i:nth-child(2){height:28px;animation-delay:-.45s}.kw-flow-lines i:nth-child(3){height:12px;animation-delay:-.8s}
+    @keyframes kw-bars { to { transform:scaleY(.35); opacity:.35; } }
+    .kw-system-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:10px; }
+    .kw-system-tile { display:grid; grid-template-columns:30px 1fr; grid-template-rows:auto auto; gap:2px 8px; align-items:center; padding:14px; text-align:left; border:1px solid rgba(255,255,255,.07); background:rgba(255,255,255,.025); color:#fff; transition:.25s; }
+    .kw-system-tile > i { grid-row:1/3; color:#6cb5ff; font-style:normal; font-size:20px; }
+    .kw-system-tile > span { font-size:11px; }
+    .kw-system-tile > small { color:rgba(255,255,255,.35); font:7px/1 var(--mono); text-transform:uppercase; letter-spacing:.08em; }
+    .kw-system-tile.is-on { border-color:rgba(75,160,255,.3); background:rgba(15,98,254,.12); }
+    .kw-next-event { display:grid; grid-template-columns:auto 1fr auto; gap:10px; align-items:center; margin-top:auto; padding:14px 0 0; color:rgba(255,255,255,.42); font-size:9px; }
+    .kw-next-event span { color:#62afff; font:7px/1 var(--mono); text-transform:uppercase; letter-spacing:.12em; }
+    .kw-next-event strong { color:rgba(255,255,255,.72); font-weight:400; }
+    .kw-next-event time { font-family:var(--mono); }
+
+    .kw-alert-card { display:flex; align-items:center; gap:14px; padding:16px; border:1px solid rgba(83,229,157,.18); background:linear-gradient(90deg, rgba(83,229,157,.08), transparent); }
+    .kw-alert-card > i { display:grid; place-items:center; width:30px; height:30px; border-radius:50%; color:#06120c; background:#53e59d; font-style:normal; box-shadow:0 0 22px rgba(83,229,157,.2); }
+    .kw-alert-card div { display:grid; gap:4px; }
+    .kw-alert-card span { color:#71e6aa; font:7px/1 var(--mono); letter-spacing:.12em; text-transform:uppercase; }
+    .kw-alert-card strong { color:#fff; font-size:11px; font-weight:400; }
+    .kw-timeline { margin-top:18px; }
+    .kw-event { display:grid; grid-template-columns:36px 10px 1fr; gap:9px; min-height:72px; }
+    .kw-event time { color:rgba(255,255,255,.3); font:7px/1.2 var(--mono); padding-top:3px; }
+    .kw-event > i { position:relative; width:7px; height:7px; border:1px solid rgba(99,175,255,.5); border-radius:50%; margin-top:2px; }
+    .kw-event > i::after { content:''; position:absolute; top:10px; left:2px; width:1px; height:53px; background:linear-gradient(#246fc1, transparent); }
+    .kw-event:last-child > i::after { display:none; }
+    .kw-event.is-latest > i { background:#56adff; box-shadow:0 0 12px #2e8eff; }
+    .kw-event div { display:grid; align-content:start; gap:5px; }
+    .kw-event strong { color:rgba(255,255,255,.9); font-size:11px; font-weight:450; }
+    .kw-event span { color:rgba(255,255,255,.35); font-size:9px; }
+    .kw-report-link { display:flex; justify-content:space-between; margin-top:auto; padding-top:13px; border-top:1px solid rgba(255,255,255,.07); color:#72b9ff; font-size:10px; }
+    .appvis-dots { gap:4px; padding:4px; border:1px solid rgba(255,255,255,.08); background:rgba(2,8,18,.74); backdrop-filter:blur(12px); }
+    .app-dot { width:auto; height:auto; min-width:82px; padding:8px 12px; border:0; border-radius:0; background:transparent; color:rgba(255,255,255,.36); font:8px/1 var(--mono); letter-spacing:.1em; text-transform:uppercase; cursor:pointer; transition:.3s ease; }
+    .app-dot.active { color:#fff; background:rgba(15,98,254,.38); transform:none; box-shadow:inset 0 0 18px rgba(15,98,254,.13); }
+
+    .lead-options { gap:12px; border:0; background:transparent; }
+    .lead-option {
+      min-height:132px;
+      justify-content:center;
+      padding:25px 58px 25px 26px;
+      background:#0f62fe;
+      border:1px solid rgba(255,255,255,.2);
+      color:#fff;
+      box-shadow:0 18px 34px rgba(0,28,92,.22), inset 0 1px rgba(255,255,255,.15);
+      transition:background .25s, transform .25s var(--ease-out), box-shadow .25s;
+    }
+    .lead-option:hover,
+    .lead-option:focus-visible { background:#2575ff; box-shadow:0 22px 42px rgba(0,25,90,.34), 0 0 0 1px rgba(255,255,255,.2); }
+    .lead-option-title { font-size:18px; }
+    .lead-option-sub { color:rgba(255,255,255,.75); font-size:12px; }
+    .lead-option-arrow { top:50%; right:24px; transform:translateY(-50%); color:#fff; }
+    .lead-option:hover .lead-option-arrow { transform:translate(4px,-50%); }
+
+    /* Product portrait and water-flow handoff */
+    .rio-product-img--unit {
+      width: min(112%, 790px);
+      max-height: none;
+      margin-inline: -6%;
+      filter: drop-shadow(0 38px 74px rgba(0,0,0,.64)) drop-shadow(0 0 36px rgba(16,98,254,.08));
+    }
+    .flow-divider {
+      position: relative;
+      height: clamp(190px, 18vw, 270px);
+      overflow: hidden;
+      isolation: isolate;
+      background: linear-gradient(180deg, #000 0%, #01040a 42%, #040d1d 100%);
+    }
+    .flow-divider::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 46% 72% at 52% 58%, rgba(34,124,235,.12), transparent 68%),
+        linear-gradient(90deg, transparent 8%, rgba(69,154,255,.025) 50%, transparent 92%);
+      filter: blur(5px);
+    }
+    .flow-divider::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 42%;
+      background: linear-gradient(180deg, transparent, rgba(4,16,38,.72));
+      pointer-events: none;
+    }
+    .flow-divider-svg {
+      position: absolute;
+      z-index: 1;
+      left: -2%;
+      bottom: 2%;
+      width: 104%;
+      height: 92%;
+      overflow: visible;
+    }
+    .flow-divider-glow {
+      fill: none;
+      stroke: url(#flow-glow);
+      stroke-width: 22;
+      opacity: .56;
+      filter: url(#flow-blur);
+    }
+    .flow-divider-line {
+      fill: none;
+      stroke: url(#flow-stroke);
+      stroke-linecap: round;
+      vector-effect: non-scaling-stroke;
+      animation: flow-current 7s linear infinite;
+    }
+    .flow-divider-line--one { stroke-width: 1.65; stroke-dasharray: 34 16 5 15; }
+    .flow-divider-line--two { stroke-width: .8; opacity: .38; stroke-dasharray: 7 13 26 20; animation-duration: 10s; animation-direction: reverse; }
+    .flow-divider-line--three { stroke-width: .65; opacity: .25; stroke-dasharray: 4 20 18 11; animation-duration: 13s; }
+    .flow-divider-drops circle { fill:#8dceff; opacity:.76; filter:drop-shadow(0 0 7px #379dff); }
+    @keyframes flow-current { to { stroke-dashoffset: -220; } }
+    .hscroll-intro { margin-top: -1px; }
+
+    @media (max-width: 900px) {
+      .appvis-inner { grid-template-columns:1fr; gap:38px; }
+      .appvis-phone { width:min(82vw,390px); min-width:0; height:650px; min-height:0; transform:none; }
+      .appvis-phone:hover { transform:translateY(-3px); }
+      .installed-h2 { max-width:18ch; }
+      .rio-product-img--unit { width:min(100%,720px); margin-inline:0; }
+    }
+    @media (max-width: 640px) {
+      .installed-item { align-items:flex-start; gap:17px; }
+      .installed-icon { width:48px; height:48px; flex-basis:48px; }
+      .installed-icon svg { width:30px; height:30px; }
+      .appvis-sticky { padding-top:72px; padding-bottom:86px; }
+      .appvis-phone { width:min(92vw,370px); height:610px; }
+      .appvis-phone-wrap::before { width:115vw; }
+      .appvis-dots { max-width:100%; }
+      .app-dot { min-width:0; padding:8px 11px; }
+      .kw-water-card { grid-template-columns:110px 1fr; padding:14px; }
+      .kw-water-orbit { width:102px; height:102px; }
+      .lead-options { grid-template-columns:1fr; }
+      .lead-option { min-height:96px; }
+      .flow-divider { height:165px; }
+      .flow-divider-svg { width:160%; left:-30%; height:94%; }
+      .rio-visual { min-height:430px; }
+      .rio-product-img--unit { max-height:none; width:108%; margin-inline:-4%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .installed-icon-orbit,
+      .installed-icon-flow,
+      .installed-icon-shield,
+      .appvis-phone-wrap::before,
+      .kw-water-orbit-ring,
+      .kw-spark-line,
+      .kw-flow-lines i,
+      .flow-divider-line { animation:none !important; }
+      .appvis-phone { transform:none; }
+      .flow-divider-drops { display:none; }
+    }
+
+    /* ── Ownership lifecycle ───────────────────────── */
+    .how.ownership {
+      height:auto;
+      min-height:0;
+      padding:clamp(110px,10vw,170px) var(--pad);
+      overflow:hidden;
+      color:#0a1020;
+      background:
+        radial-gradient(circle at 83% 18%, rgba(16,98,254,.09), transparent 31%),
+        linear-gradient(180deg,#f7f9fb 0%,#eef2f6 100%);
+    }
+    .ownership-inner { width:min(100%,var(--max)); margin:0 auto; }
+    .ownership-header {
+      display:block;
+      margin-bottom:clamp(66px,7vw,108px);
+    }
+    .ownership-kicker {
+      grid-column:1/-1;
+      margin-bottom:24px;
+      color:#1062fe;
+      font:500 12px/1 var(--mono);
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+    .ownership .how-h2 { margin:0; max-width:none; color:#0a1020; }
+    .ownership .how-sub {
+      margin:0 0 5px;
+      max-width:610px;
+      color:#536070;
+      font-size:clamp(18px,1.3vw,21px);
+      line-height:1.65;
+    }
+    .ownership-track {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      border-top:1px solid rgba(11,25,46,.17);
+      border-bottom:1px solid rgba(11,25,46,.17);
+    }
+    .ownership-stage {
+      position:relative;
+      min-height:390px;
+      padding:40px clamp(24px,3vw,48px) 42px;
+      display:flex;
+      flex-direction:column;
+      background:rgba(255,255,255,.4);
+    }
+    .ownership-stage + .ownership-stage { border-left:1px solid rgba(11,25,46,.14); }
+    .ownership-stage::before {
+      content:'';
+      position:absolute;
+      top:-1px; left:0;
+      width:0; height:2px;
+      background:#1062fe;
+      transition:width .7s cubic-bezier(.22,1,.36,1);
+    }
+    .ownership-stage.in-view::before { width:100%; }
+    .ownership-meta { display:flex; align-items:center; gap:18px; color:#1062fe; font-family:var(--sans); }
+    .ownership-meta span { font-size:clamp(46px,4.2vw,68px); font-weight:600; line-height:.8; letter-spacing:-.06em; }
+    .ownership-meta small { color:#536070; font:500 13px/1.2 var(--sans); letter-spacing:.04em; text-transform:none; }
+    .ownership-stage h3 {
+      margin:30px 0 18px;
+      max-width:12ch;
+      color:#0a1020;
+      font-size:clamp(30px,2.4vw,40px);
+      line-height:1.04;
+      letter-spacing:-.035em;
+    }
+    .ownership-stage p {
+      margin:0;
+      max-width:32ch;
+      color:#66717f;
+      font-size:17px;
+      line-height:1.62;
+    }
+    .ownership-motion {
+      width:160px;
+      height:92px;
+      margin-top:auto;
+      color:#1062fe;
+    }
+    .ownership-motion svg { width:100%; height:100%; overflow:visible; }
+    .motion-line,.motion-body,.motion-detail,.motion-ring,.motion-arc,.motion-drop,.motion-bell,.motion-bell-clapper,.motion-wave {
+      fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;
+    }
+    .motion-line,.motion-arc,.motion-wave { stroke-dasharray:140; stroke-dashoffset:140; animation:ownership-draw 3.2s cubic-bezier(.4,0,.2,1) infinite; }
+    .motion-detail { opacity:.42; }
+    .motion-node,.motion-pulse,.motion-alert-dot { fill:currentColor; }
+    .motion-node { animation:ownership-node 3.2s ease-in-out infinite; }
+    .motion-node--two { animation-delay:.35s; }
+    .motion-ring { opacity:.2; }
+    .motion-arc--two { animation-delay:.35s; }
+    .motion-drop { fill:rgba(16,98,254,.06); }
+    .motion-pulse { transform-origin:80px 54px; animation:ownership-pulse 2.2s ease-out infinite; }
+    .motion-bell { fill:rgba(16,98,254,.05); transform-origin:80px 47px; animation:ownership-bell 3.6s ease-in-out infinite; }
+    .motion-wave--two { animation-delay:.22s; }
+    .motion-alert-dot { transform-origin:102px 24px; animation:ownership-alert 2.4s ease-in-out infinite; }
+    @keyframes ownership-draw { 0%,12%{stroke-dashoffset:140;opacity:.15} 48%,82%{stroke-dashoffset:0;opacity:1} 100%{stroke-dashoffset:-140;opacity:.15} }
+    @keyframes ownership-node { 0%,100%{opacity:.25;transform:scale(.65)} 42%,68%{opacity:1;transform:scale(1)} }
+    @keyframes ownership-pulse { 0%{opacity:1;transform:scale(.7)} 75%,100%{opacity:0;transform:scale(2.7)} }
+    @keyframes ownership-bell { 0%,62%,100%{transform:rotate(0)} 68%{transform:rotate(-5deg)} 74%{transform:rotate(5deg)} 80%{transform:rotate(-3deg)} }
+    @keyframes ownership-alert { 0%,100%{opacity:.45;transform:scale(.72)} 50%{opacity:1;transform:scale(1.18)} }
+    .ownership-axis {
+      display:flex;
+      align-items:center;
+      gap:18px;
+      margin-top:24px;
+      color:#7b8794;
+      font:500 10px/1 var(--mono);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .ownership-axis i { flex:1; height:1px; background:linear-gradient(90deg,rgba(16,98,254,.55),rgba(16,98,254,.08)); }
+
+    /* ── Three-layer Rio architecture explorer ────── */
+    .scope-explorer {
+      display:grid;
+      grid-template-columns:minmax(190px,.55fr) minmax(390px,1.15fr) minmax(300px,.8fr);
+      min-height:620px;
+      margin-top:clamp(56px,6vw,90px);
+      border:1px solid rgba(125,175,255,.18);
+      background:rgba(1,7,18,.7);
+      box-shadow:0 45px 120px rgba(0,0,0,.35);
+      overflow:hidden;
+    }
+    .scope-tabs { display:flex; flex-direction:column; padding:24px 0; }
+    .scope-tab {
+      position:relative;
+      min-height:112px;
+      padding:24px 30px;
+      border:0;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      color:#748095;
+      background:transparent;
+      text-align:left;
+      cursor:pointer;
+      transition:color .3s ease,background .3s ease;
+    }
+    .scope-tab::before { content:''; position:absolute; inset:0 auto 0 0; width:2px; background:#2581ff; transform:scaleY(0); transition:transform .35s ease; }
+    .scope-tab span { display:block; margin-bottom:12px; font:500 10px/1 var(--mono); letter-spacing:.17em; }
+    .scope-tab strong { color:inherit; font-size:18px; font-weight:500; line-height:1.25; }
+    .scope-tab:hover,.scope-tab.is-active { color:#fff; background:rgba(16,98,254,.085); }
+    .scope-tab.is-active::before { transform:scaleY(1); }
+    .scope-stage {
+      position:relative;
+      min-width:0;
+      display:grid;
+      place-items:center;
+      border-inline:1px solid rgba(255,255,255,.08);
+      overflow:hidden;
+      isolation:isolate;
+      background:radial-gradient(circle at 50% 48%,rgba(22,93,201,.16),transparent 52%);
+    }
+    .scope-product { position:relative; z-index:2; width:min(88%,650px); filter:drop-shadow(0 34px 45px rgba(0,0,0,.62)); transition:transform .65s cubic-bezier(.22,1,.36,1),filter .45s ease; }
+    .scope-explorer[data-scope-layer="1"] .scope-product { transform:scale(.88); filter:drop-shadow(0 34px 45px rgba(0,0,0,.62)) saturate(.75); }
+    .scope-explorer[data-scope-layer="2"] .scope-product { transform:scale(.76); filter:drop-shadow(0 34px 45px rgba(0,0,0,.62)) brightness(.7); }
+    .scope-orbit {
+      position:absolute;
+      z-index:1;
+      width:52%; aspect-ratio:1;
+      border:1px solid rgba(71,160,255,.22);
+      border-radius:50%;
+      opacity:.15;
+      transition:opacity .4s ease,transform .65s ease;
+      animation:scope-orbit 22s linear infinite;
+    }
+    .scope-orbit::after { content:''; position:absolute; top:11%; left:13%; width:7px; height:7px; border-radius:50%; background:#53a9ff; box-shadow:0 0 18px #2581ff; }
+    .scope-orbit--middle { width:70%; animation-direction:reverse; animation-duration:32s; }
+    .scope-orbit--outer { width:90%; animation-duration:44s; }
+    .scope-explorer[data-scope-layer="0"] .scope-orbit--inner,
+    .scope-explorer[data-scope-layer="1"] .scope-orbit--middle,
+    .scope-explorer[data-scope-layer="2"] .scope-orbit--outer { opacity:.75; transform:scale(1.02); }
+    @keyframes scope-orbit { to{rotate:360deg} }
+    .scope-hotspot {
+      position:absolute; z-index:3;
+      width:14px; height:14px;
+      border:2px solid #73baff;
+      border-radius:50%;
+      background:#061226;
+      box-shadow:0 0 0 7px rgba(37,129,255,.12),0 0 25px rgba(37,129,255,.48);
+      opacity:0;
+      transform:scale(.6);
+      transition:opacity .3s ease,transform .3s ease;
+    }
+    .scope-hotspot { width:auto; height:auto; padding-left:21px; border:0; background:transparent; border-radius:0; color:#cde4ff; font:500 10px/1.2 var(--mono); letter-spacing:.08em; white-space:nowrap; box-shadow:none; }
+    .scope-hotspot i { position:absolute; left:0; top:50%; width:11px; height:11px; border:2px solid #73baff; border-radius:50%; background:#061226; box-shadow:0 0 0 7px rgba(37,129,255,.12),0 0 25px rgba(37,129,255,.48); transform:translateY(-50%); }
+    .scope-hotspot--inside{left:34%;top:37%}.scope-hotspot--connect{left:57%;top:53%}.scope-hotspot--site{left:45%;top:71%}
+    .scope-explorer[data-scope-layer="0"] .scope-hotspot--inside,
+    .scope-explorer[data-scope-layer="1"] .scope-hotspot--connect,
+    .scope-explorer[data-scope-layer="2"] .scope-hotspot--site { opacity:1; transform:scale(1); }
+    .scope-panels { position:relative; min-height:100%; padding:clamp(38px,4vw,66px); }
+    .scope-panel { position:absolute; inset:clamp(38px,4vw,66px); opacity:0; pointer-events:none; transform:translateY(16px); transition:opacity .35s ease,transform .45s cubic-bezier(.22,1,.36,1); }
+    .scope-panel.is-active { opacity:1; pointer-events:auto; transform:none; }
+    .scope-panel-label,.scope-panel-index { color:#4094ff; font:500 11px/1 var(--mono); letter-spacing:.16em; text-transform:uppercase; }
+    .scope-panel h3 { margin:28px 0 19px; color:#fff; font-size:clamp(30px,2.45vw,42px); line-height:1.06; letter-spacing:-.035em; }
+    .scope-panel p { margin:0 0 32px; color:#8993a2; font-size:17px; line-height:1.65; }
+    .scope-panel ul { margin:0; padding:0; list-style:none; border-top:1px solid rgba(255,255,255,.1); }
+    .scope-panel li { position:relative; padding:16px 0 16px 22px; border-bottom:1px solid rgba(255,255,255,.08); color:#cad1db; font-size:14px; line-height:1.45; }
+    .scope-panel li::before { content:''; position:absolute; left:0; top:22px; width:6px; height:6px; border-radius:50%; background:#2581ff; box-shadow:0 0 12px rgba(37,129,255,.6); }
+
+    /* ── Light editorial comparison ──────────────── */
+    .diff { color:#0a1020; background:linear-gradient(180deg,#f5f7f9 0%,#eef2f5 100%); }
+    .diff-h2-line1 { color:#858f9b; }
+    .diff-h2-line2 { color:#0a1020; }
+    .benefit-table { border-color:rgba(11,25,46,.18); background:#fff; box-shadow:0 32px 90px rgba(22,39,66,.08); }
+    .benefit-head { background:#f9fafb; border-color:rgba(11,25,46,.13); }
+    .benefit-col-title { color:#263244; }
+    .benefit-col-title + .benefit-col-title { border-color:rgba(11,25,46,.13); }
+    .benefit-col-title--kw { color:#0c58d2; background:rgba(16,98,254,.055); border-top-color:#1062fe; }
+    .benefit-row { border-color:rgba(11,25,46,.11); background:#fff; }
+    .benefit-row:hover { background:#f9fbfe; }
+    .benefit-cell + .benefit-cell { border-color:rgba(11,25,46,.11); }
+    .benefit-cell--traditional { color:#6d7783; }
+    .benefit-cell--kw { color:#172235; background:rgba(16,98,254,.035); }
+    .benefit-cell--traditional .benefit-mark { color:#7e8995; border-color:rgba(11,25,46,.25); }
+
+    /* ── Audience cards: one system, three viewpoints ─ */
+    .audience { position:relative; overflow:hidden; background:#02050b; }
+    .audience::before {
+      content:''; position:absolute; inset:0; pointer-events:none;
+      background:
+        radial-gradient(circle at 13% 28%,rgba(16,98,254,.11),transparent 28%),
+        radial-gradient(circle at 86% 72%,rgba(25,115,230,.08),transparent 32%);
+    }
+    .audience-inner { position:relative; z-index:1; }
+    .audience-header { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr); column-gap:clamp(50px,8vw,140px); align-items:end; }
+    .audience-header .label { grid-column:1/-1; }
+    .audience-frame { margin:0 0 6px; max-width:42ch; font-size:17px; line-height:1.6; }
+    .audience-panels { gap:18px; background:transparent; }
+    .audience-panel {
+      position:relative; min-height:560px; padding:0 38px 42px; gap:18px;
+      border:1px solid rgba(122,174,255,.14);
+      background:linear-gradient(180deg,rgba(11,28,55,.72),rgba(3,8,17,.9));
+      overflow:hidden; isolation:isolate;
+      transition:transform .35s cubic-bezier(.22,1,.36,1),border-color .35s ease,background .35s ease;
+    }
+    .audience-panel::after { content:''; position:absolute; inset:auto -25% -42% 20%; height:65%; border-radius:50%; background:rgba(16,98,254,.12); filter:blur(60px); opacity:.35; transition:opacity .35s ease,transform .55s ease; z-index:-1; }
+    .audience-panel:hover { transform:translateY(-8px); border-color:rgba(78,154,255,.42); background:linear-gradient(180deg,rgba(13,37,73,.8),rgba(3,9,20,.94)); }
+    .audience-panel:hover::after { opacity:.8; transform:translateY(-10%); }
+    .audience-visual { flex:0 0 210px; height:210px; margin:0 -38px 12px; display:grid; place-items:center; border-bottom:1px solid rgba(255,255,255,.07); background:radial-gradient(circle at 50% 55%,rgba(31,114,230,.14),transparent 57%); }
+    .audience-visual svg { width:min(76%,240px); height:165px; overflow:visible; }
+    .audience-flow,.audience-cabinet,.audience-cabinet-detail,.audience-plug,.audience-radar,.audience-radar-cross,.audience-radar-sweep { fill:none; stroke:#4b9dff; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+    .audience-flow { stroke-dasharray:8 8; animation:audience-flow 2.2s linear infinite; }
+    .audience-node { fill:#07162c; stroke:#65adff; stroke-width:2; animation:audience-node 2.8s ease-in-out infinite; }
+    .audience-node--2{animation-delay:.25s}.audience-node--3{animation-delay:.5s}.audience-node--4{animation-delay:.75s}
+    .audience-core { fill:rgba(16,98,254,.13); stroke:#65adff; stroke-width:1.7; }
+    .audience-core-dot,.audience-status,.audience-radar-dot { fill:#67b2ff; filter:drop-shadow(0 0 8px #1679ff); }
+    .audience-cabinet { fill:rgba(16,98,254,.06); }
+    .audience-cabinet-detail { opacity:.42; }
+    .audience-plug--left { animation:audience-connect-left 3s ease-in-out infinite; }
+    .audience-plug--right { animation:audience-connect-right 3s ease-in-out infinite; }
+    .audience-status { animation:audience-status 1.8s ease-in-out infinite; }
+    .audience-radar { opacity:.34; }
+    .audience-radar-cross { opacity:.15; }
+    .audience-radar-sweep { fill:rgba(34,130,255,.13); transform-origin:90px 60px; animation:audience-sweep 4.5s linear infinite; }
+    .audience-radar-dot { animation:audience-status 1.8s ease-in-out infinite; }
+    @keyframes audience-flow { to{stroke-dashoffset:-32} }
+    @keyframes audience-node { 0%,100%{opacity:.35} 50%{opacity:1} }
+    @keyframes audience-connect-left { 0%,18%{transform:translateX(-18px);opacity:.2} 45%,80%{transform:none;opacity:1} 100%{opacity:.2} }
+    @keyframes audience-connect-right { 0%,28%{transform:translateX(18px);opacity:.2} 55%,80%{transform:none;opacity:1} 100%{opacity:.2} }
+    @keyframes audience-status { 0%,100%{opacity:.35} 50%{opacity:1} }
+    @keyframes audience-sweep { to{transform:rotate(360deg)} }
+
+    @media (max-width:1000px) {
+      .ownership-header { grid-template-columns:1fr; gap:28px; }
+      .ownership .how-h2 { max-width:14ch; }
+      .audience-header { grid-template-columns:1fr; gap:24px; }
+      .audience-frame { margin:0; }
+      .audience-panel { min-height:420px; padding-bottom:32px; }
+      .audience-visual { flex-basis:170px; height:170px; }
+      .scope-explorer { grid-template-columns:150px minmax(340px,1fr); }
+      .scope-panels { grid-column:1/-1; min-height:390px; border-top:1px solid rgba(255,255,255,.08); }
+      .scope-stage { border-right:0; }
+    }
+    @media (max-width:760px) {
+      .how.ownership { padding-block:92px; }
+      .ownership-track { grid-template-columns:1fr; }
+      .ownership-stage { min-height:310px; padding:34px 24px; }
+      .ownership-stage + .ownership-stage { border-left:0; border-top:1px solid rgba(11,25,46,.14); }
+      .ownership-stage h3 { margin-top:24px; }
+      .ownership-axis { display:none; }
+      .ownership-motion { margin-top:34px; }
+      .audience-panels { grid-template-columns:1fr; }
+      .audience-panel { min-height:0; padding-bottom:34px; }
+      .audience-visual { flex-basis:180px; height:180px; }
+      .scope-explorer { display:block; min-height:0; }
+      .scope-tabs { flex-direction:row; padding:0; overflow:hidden; }
+      .scope-tab { flex:1 1 33.333%; min-width:0; min-height:96px; padding:18px 12px; border-right:1px solid rgba(255,255,255,.08); font-size:13px; line-height:1.25; }
+      .scope-tab::before { inset:auto 0 0; width:auto; height:2px; transform:scaleX(0); }
+      .scope-tab.is-active::before { transform:scaleX(1); }
+      .scope-tab strong { font-size:15px; }
+      .scope-stage { min-height:390px; border:0; border-block:1px solid rgba(255,255,255,.08); }
+      .scope-product { width:min(92%,560px); }
+      .scope-panels { min-height:440px; padding:34px 24px; }
+      .scope-panel { inset:34px 24px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      .ownership-motion *,.audience-visual *,.scope-orbit { animation:none !important; }
+      .scope-product,.scope-panel,.scope-tab::before,.ownership-stage::before { transition:none !important; }
     }
   </style>
 </head>
@@ -4554,11 +5688,11 @@
       <img src="KW_Media/KW-NEWASSETS/KW_HIGHRES_LOGO.png" alt="KONTROLWATER" />
     </a>
     <ul class="nav-links">
-      <li><a href="#how-it-works">How It Works</a></li>
-      <li><a href="#who-its-for">Who It's For</a></li>
-      <li><a href="#compare">Compare</a></li>
+      <li><a href="#system">How Rio works</a></li>
+      <li><a href="#who-its-for">Who it’s for</a></li>
+      <li><a href="#specifications">System</a></li>
     </ul>
-    <button type="button" class="nav-cta" id="contact-menu-trigger" aria-expanded="false" aria-controls="contact-menu">Contact Us</button>
+    <a class="nav-cta" href="#contact">Request an assessment</a>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -4566,29 +5700,10 @@
 
   <!-- Mobile nav drawer -->
   <div class="nav-mobile-menu" id="nav-mobile-menu">
-    <a href="#how-it-works">How It Works</a>
-    <a href="#who-its-for">Who It's For</a>
-    <a href="#compare">Compare</a>
-    <button type="button" class="nav-cta-mobile" id="contact-menu-trigger-mobile">Contact Us</button>
-  </div>
-
-  <div class="contact-menu" id="contact-menu" hidden>
-    <div class="contact-menu-head">
-      <button type="button" class="contact-menu-close" aria-label="Close contact menu">×</button>
-    </div>
-    <button type="button" class="contact-choice" data-contact-channel="phone">
-      <span class="contact-choice-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M7.1 2.8 9.7 2a1.5 1.5 0 0 1 1.8.9l1.2 3a1.5 1.5 0 0 1-.4 1.7l-1.5 1.3a14.2 14.2 0 0 0 4.3 4.3l1.3-1.5a1.5 1.5 0 0 1 1.7-.4l3 1.2a1.5 1.5 0 0 1 .9 1.8l-.8 2.6a4 4 0 0 1-4.3 2.8A17 17 0 0 1 4.3 7.1 4 4 0 0 1 7.1 2.8Z"/></svg>
-      </span>
-      <span><strong>Call us</strong><small>Number coming soon</small></span>
-    </button>
-    <button type="button" class="contact-choice" data-contact-channel="whatsapp">
-      <span class="contact-choice-icon contact-choice-icon--whatsapp" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.6L2.3 22l5.5-1.3A9.7 9.7 0 1 0 12 2Zm0 2a7.7 7.7 0 0 1 0 15.4 7.6 7.6 0 0 1-3.9-1.1l-.5-.3-2.6.6.6-2.5-.3-.5A7.7 7.7 0 0 1 12 4Zm-3.2 3.7c-.2 0-.5.1-.7.4-.2.3-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.6 4.1 3.5 2 .8 2.5.7 3 .6.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.4l-1.8-.8c-.3-.1-.5-.2-.7.2l-.9 1.1c-.2.2-.3.2-.6.1a6.2 6.2 0 0 1-1.8-1.1 6.8 6.8 0 0 1-1.3-1.6c-.1-.3 0-.4.1-.5l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.8-1.9c-.2-.5-.5-.5-.8-.5Z"/></svg>
-      </span>
-      <span><strong>WhatsApp</strong><small>Number coming soon</small></span>
-    </button>
-    <a href="#contact" class="contact-menu-quote">Prefer an email quote? Use the assessment →</a>
+    <a href="#system">How Rio works</a>
+    <a href="#who-its-for">Who it’s for</a>
+    <a href="#specifications">System</a>
+    <a class="nav-cta-mobile" href="#contact">Request an assessment</a>
   </div>
 
   <!-- ═══════════════════════════════════════════
@@ -4601,15 +5716,15 @@
       aria-hidden="true"></video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <span class="label hero-product">KW2000 · Smart pool &amp; garden controller</span>
       <h1 class="hero-h1">
-        <span class="sr-only">KW2000 smart pool and garden controller.</span>
+        <span class="sr-only">KONTROLWATER Rio smart pool and garden controller.</span>
         <span class="hero-line"><span class="hero-line-inner" id="hl1">Your pool</span></span>
         <span class="hero-line"><span class="hero-line-inner" id="hl2">runs itself.</span></span>
       </h1>
-      <p class="hero-sub" id="hero-sub">One smart controller for your pool, spa, water features and garden — on the cabinet or from anywhere with the web app.</p>
+      <p class="hero-sub" id="hero-sub">One smart system for your pool, spa, water features and garden — controlled from anywhere.</p>
       <div class="hero-actions" id="hero-actions">
-        <a href="#contact" class="btn-primary">Get a free quote &rarr;</a>
+        <a href="#contact" class="btn-primary">Request a site assessment &rarr;</a>
+        <a href="#system" class="btn-ghost">See how Rio works</a>
       </div>
     </div>
   </section>
@@ -4617,23 +5732,17 @@
   <!-- ═══════════════════════════════════════════
        INTRO STATEMENT
   ═══════════════════════════════════════════════ -->
-  <section class="intro">
-    <div class="intro-inner">
-      <div class="sr">
-        <div class="intro-rule"></div>
-        <span class="label">About KONTROLWATER</span>
+  <section class="rio-intro" aria-labelledby="rio-title">
+    <div class="rio-intro-grid">
+      <div class="rio-copy sr">
+        <h2 class="rio-h2" id="rio-title">
+          <span>Meet Rio.</span>
+          <span>A truly smart pool &amp; garden controller.</span>
+        </h2>
+        <p class="rio-body">Filtration, UV disinfection, salt chlorination, pH dosing, spa, water features and garden control — brought together on one board in one pre-plumbed, pre-wired cabinet.</p>
       </div>
-      <div></div>
-    </div>
-    <div class="intro-body-grid">
-      <h2 class="intro-h2" id="tw-heading" data-text="One smart brain." style="visibility:hidden"></h2>
-      <div class="intro-body sr">
-        <p>
-          Pool equipment is usually split across separate controls, plumbing and schedules. That makes installation slower and everyday operation harder than it needs to be.
-        </p>
-        <p>
-          KW2000 brings filtration, UV disinfection, salt chlorination, pH dosing, spa, water features and garden control onto one board in one wall-mounted cabinet.
-        </p>
+      <div class="rio-visual sr sr-d1">
+        <img class="rio-product-img rio-product-img--unit" src="KW_Media/KW_AI/KW_RIO_UNIT.png" alt="KONTROLWATER Rio integrated pool and garden controller" />
       </div>
     </div>
   </section>
@@ -4675,28 +5784,42 @@
       <!-- LEFT: stacked module faces -->
       <div class="cp-stage">
         <div class="cp-modules" id="cp-modules" data-mode="0">
-          <img class="cp-system-img" src="KW_Media/KW_AI/KW_ENGINEERED_EUROPE.png" alt="KONTROLWATER automated pool management system" />
-          <svg class="cp-flow-map" viewBox="0 0 1000 667" aria-hidden="true">
-            <path class="cp-flow-base" d="M67 306 H253 V235 H605 V263 H925 V420 H789 V515 H515" />
-            <path class="cp-flow cp-sense" d="M67 306 H253 V235 H475" />
-            <path class="cp-flow cp-dose" d="M430 560 V478 H610 V408" />
-            <path class="cp-flow cp-filter" d="M475 235 H605 V365 H725" />
-            <path class="cp-flow cp-circulate cp-flow-slow" d="M67 306 H253 V235 H605 V263 H925 V420 H789 V515 H515" />
-            <path class="cp-flow cp-predict" d="M610 365 V263 H830" />
-
-            <circle class="cp-node cp-node-sense" cx="253" cy="292" r="31"/><circle class="cp-node-core cp-node-core-sense" cx="253" cy="292" r="6"/>
-            <circle class="cp-data-wave" cx="253" cy="292" r="22"/><circle class="cp-data-wave" cx="253" cy="292" r="22" style="animation-delay:-.85s"/>
-            <circle class="cp-node cp-node-dose" cx="465" cy="538" r="31"/><circle class="cp-node-core cp-node-core-dose" cx="465" cy="538" r="6"/>
-            <circle class="cp-node cp-node-filter" cx="603" cy="365" r="31"/><circle class="cp-node-core cp-node-core-filter" cx="603" cy="365" r="6"/>
-            <circle class="cp-node cp-node-circulate" cx="865" cy="468" r="31"/><circle class="cp-node-core cp-node-core-circulate" cx="865" cy="468" r="6"/>
-            <circle class="cp-node cp-node-predict" cx="826" cy="254" r="31"/><circle class="cp-node-core cp-node-core-predict" cx="826" cy="254" r="6"/>
-            <g transform="translate(603 365)"><circle class="cp-particle" cx="-18" cy="2" r="4"/><circle class="cp-particle" cx="-4" cy="-8" r="3"/><circle class="cp-particle" cx="12" cy="7" r="4"/></g>
-          </svg>
-          <button class="cp-mod cp-hot-sense cp-pos-active" data-module="0" aria-label="Show Sense"></button>
-          <button class="cp-mod cp-hot-dose" data-module="1" aria-label="Show Disinfect"></button>
-          <button class="cp-mod cp-hot-filter" data-module="2" aria-label="Show Dose"></button>
-          <button class="cp-mod cp-hot-circulate" data-module="3" aria-label="Show Route"></button>
-          <button class="cp-mod cp-hot-predict" data-module="4" aria-label="Show Backwash"></button>
+          <div class="rio-story" aria-label="Guided view of water moving through the Rio system">
+            <div class="rio-story-glow" aria-hidden="true"></div>
+            <img class="rio-story-product" src="KW_Media/KW3D/RIO_fallback.png" alt="Rio controller connected to a sand filter, chemical dosing tanks and two circulation pumps" />
+            <svg class="rio-story-flow" viewBox="0 0 1165 1350" aria-hidden="true">
+              <defs>
+                <filter id="rioFlowGlow" x="-40%" y="-40%" width="180%" height="180%">
+                  <feGaussianBlur stdDeviation="5" result="blur" />
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <g class="rio-path rio-path--sense">
+                <path d="M1054 1196 C1038 1020 1018 875 932 813 C850 754 786 720 744 670 L744 563 L655 558" />
+              </g>
+              <g class="rio-path rio-path--disinfect">
+                <path d="M542 383 L785 383 C826 383 845 411 845 449 L845 548 L703 548" />
+              </g>
+              <g class="rio-path rio-path--dose">
+                <path d="M495 1012 C510 921 555 836 593 733 L593 650" />
+                <path d="M655 1010 C660 915 651 817 633 705 L633 650" />
+              </g>
+              <g class="rio-path rio-path--route">
+                <path d="M1054 1196 C1034 1030 1015 888 919 823 L763 728 L455 724 L332 770 L236 778" />
+                <path d="M937 790 L937 637 L923 557 L923 322" />
+              </g>
+              <g class="rio-path rio-path--backwash">
+                <path d="M927 794 L763 725 L488 725 C425 725 386 756 346 780 L231 786" />
+                <path d="M231 786 C184 779 152 747 146 699" />
+              </g>
+            </svg>
+            <div class="rio-story-focus rio-story-focus--sense"><span>Live water analysis</span><small>pH · ORP · flow · pressure</small></div>
+            <div class="rio-story-focus rio-story-focus--disinfect"><span>UV-C + salt</span><small>Two complementary treatment stages</small></div>
+            <div class="rio-story-focus rio-story-focus--dose"><span>Automatic dosing</span><small>Correction when the water needs it</small></div>
+            <div class="rio-story-focus rio-story-focus--route"><span>Motorised routing</span><small>Pool · spa · features</small></div>
+            <div class="rio-story-focus rio-story-focus--backwash"><span>Automatic backwash</span><small>Filter cleaning routed to waste</small></div>
+            <div class="rio-story-legend" aria-hidden="true"><i></i><span>Guided system view</span></div>
+          </div>
         </div>
 
         <!-- Clickable chip roster -->
@@ -4717,39 +5840,67 @@
 
         <div class="cp-panel active" id="cp-p0">
 
-          <h3 class="cp-panel-h3" data-mode-label="Sense">Water quality.<br/>Read live.</h3>
-          <p class="cp-panel-body">An inline sensor manifold reads water quality as it moves through the system, giving the controller the information it needs to act.</p>
+          <h3 class="cp-panel-h3" data-mode-label="Sense">Read the water continuously.</h3>
+          <p class="cp-panel-body">Rio brings the water through an inline sensor manifold, giving the controller the live information it needs to respond.</p>
         </div>
 
         <div class="cp-panel" id="cp-p1">
 
-          <h3 class="cp-panel-h3" data-mode-label="Disinfect">Two layers of<br/>disinfection.</h3>
-          <p class="cp-panel-body">Integrated UV treatment neutralises bacteria as water passes through, while the built-in salt cell makes chlorine on demand.</p>
+          <h3 class="cp-panel-h3" data-mode-label="Disinfect">Treat it in two stages.</h3>
+          <p class="cp-panel-body">Integrated UV-C treatment works alongside salt chlorination, combining two treatment stages inside one controlled system.</p>
         </div>
 
         <div class="cp-panel" id="cp-p2">
 
-          <h3 class="cp-panel-h3" data-mode-label="Dose">Balanced water.<br/>Automatically.</h3>
-          <p class="cp-panel-body">Automatic pH correction and HCl dispensing keep water balanced without buckets, guesswork or a separate dosing controller.</p>
+          <h3 class="cp-panel-h3" data-mode-label="Dose">Balance it automatically.</h3>
+          <p class="cp-panel-body">Automatic pH correction responds when required, while supply-level sensing warns the team before treatment chemicals run low.</p>
         </div>
 
         <div class="cp-panel" id="cp-p3">
 
-          <h3 class="cp-panel-h3" data-mode-label="Route">Every water path.<br/>One controller.</h3>
-          <p class="cp-panel-body">Motorised valves route filtration, spa and water features, while two pump motors can be scheduled and controlled independently.</p>
+          <h3 class="cp-panel-h3" data-mode-label="Route">Send it where it needs to go.</h3>
+          <p class="cp-panel-body">Motorised valves coordinate the pool, spa and water-feature circuits, while two pump motors can be scheduled independently.</p>
         </div>
 
         <div class="cp-panel" id="cp-p4">
 
-          <h3 class="cp-panel-h3" data-mode-label="Backwash">The filter cleans<br/>itself.</h3>
-          <p class="cp-panel-body">Pressure sensing detects a loaded sand filter and triggers backwash automatically. Supply warnings tell you before treatment chemicals run low.</p>
+          <h3 class="cp-panel-h3" data-mode-label="Backwash">Clean the filter automatically.</h3>
+          <p class="cp-panel-body">Pressure sensing identifies when the sand filter needs attention and initiates an automatic backwash cycle to waste.</p>
         </div>
       </div>
 
     </div>
   </div>
 
-  <div class="section-ray" aria-hidden="true"></div>
+  <div class="flow-divider" aria-hidden="true">
+    <svg class="flow-divider-svg" viewBox="0 0 1600 240" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="flow-stroke" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#0f62fe" stop-opacity="0"/>
+          <stop offset=".24" stop-color="#58b7ff" stop-opacity=".46"/>
+          <stop offset=".58" stop-color="#1378df" stop-opacity=".7"/>
+          <stop offset="1" stop-color="#0f62fe" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="flow-glow" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#0f62fe" stop-opacity="0"/>
+          <stop offset=".5" stop-color="#3fa7ff" stop-opacity=".28"/>
+          <stop offset="1" stop-color="#0f62fe" stop-opacity="0"/>
+        </linearGradient>
+        <filter id="flow-blur" x="-10%" y="-100%" width="120%" height="300%">
+          <feGaussianBlur stdDeviation="9"/>
+        </filter>
+      </defs>
+      <path class="flow-divider-glow" d="M-120 166 C100 34 292 216 514 115 S892 42 1084 132 1398 212 1720 40"/>
+      <path class="flow-divider-line flow-divider-line--one" d="M-120 166 C100 34 292 216 514 115 S892 42 1084 132 1398 212 1720 40"/>
+      <path class="flow-divider-line flow-divider-line--two" d="M-100 188 C134 72 314 222 540 136 S902 68 1110 152 1422 224 1700 70"/>
+      <path class="flow-divider-line flow-divider-line--three" d="M-120 140 C88 14 280 190 490 92 S870 14 1064 104 1380 190 1720 22"/>
+      <g class="flow-divider-drops">
+        <circle r="3.5"><animateMotion dur="9s" repeatCount="indefinite" path="M-120 166 C100 34 292 216 514 115 S892 42 1084 132 1398 212 1720 40"/></circle>
+        <circle r="2.5"><animateMotion dur="12s" begin="-5s" repeatCount="indefinite" path="M-100 188 C134 72 314 222 540 136 S902 68 1110 152 1422 224 1700 70"/></circle>
+        <circle r="2"><animateMotion dur="10s" begin="-7s" repeatCount="indefinite" path="M-120 140 C88 14 280 190 490 92 S870 14 1064 104 1380 190 1720 22"/></circle>
+      </g>
+    </svg>
+  </div>
 
   <!-- ═══════════════════════════════════════════
        BUILT FOR — section header
@@ -4757,7 +5908,7 @@
   <div class="hscroll-intro">
     <div class="wrap">
       <h2 class="hscroll-intro-h2 sr sr-d1">The highest standard in pool control.</h2>
-      <p class="hscroll-intro-sub sr sr-d2">One intelligent control layer for pool, spa, water features and garden — designed for homes, hospitality and commercial environments.</p>
+      <p class="hscroll-intro-sub sr sr-d2">Designed for homes, hospitality and commercial environments where every water system should work as one.</p>
     </div>
   </div>
 
@@ -4812,116 +5963,111 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
-       HOW IT WORKS — scroll-driven + SVG diagram
+       OWNERSHIP LIFECYCLE
   ═══════════════════════════════════════════════ -->
-  <section class="how" id="how-it-works">
-    <div class="how-sticky">
-      <!-- Particle canvas — sits behind everything in the sticky panel -->
-      <canvas id="how-canvas" class="how-canvas" aria-hidden="true"></canvas>
+  <section class="how ownership" id="ownership">
+    <div class="ownership-inner">
+      <header class="ownership-header sr">
+        <h2 class="how-h2">Installed once. Managed always.</h2>
+      </header>
 
-      <div class="how-inner">
-        <div class="how-header">
-          <h2 class="how-h2 sr">Installed once. Managed always.</h2>
-          <p class="how-sub sr">
-            KW2000 arrives pre-plumbed and pre-wired, bringing treatment, hydraulic control and remote access together in one cabinet.
-          </p>
-        </div>
-
-        <div class="how-steps">
-          <div class="how-step" data-step="1">
-            <div class="step-heading">
-              <svg class="step-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-                <circle cx="20" cy="20" r="3.5" fill="currentColor"/>
-                <circle cx="20" cy="20" r="9" stroke="currentColor" stroke-width="1.5" class="sr1"/>
-                <circle cx="20" cy="20" r="16" stroke="currentColor" stroke-width="1" class="sr2"/>
-              </svg>
-              <div class="step-title">Sense</div>
-            </div>
-            <p class="step-primary">Inline probes read water quality live. See system status at the cabinet touchscreen or through the web app.</p>
+      <div class="ownership-track">
+        <article class="ownership-stage sr sr-stagger" style="--stagger-delay:0ms">
+          <div class="ownership-meta"><span>01</span><small>Installation day</small></div>
+          <h3>Install once.</h3>
+          <p>Pre-plumbed and pre-wired around the confirmed site requirements, reducing work, complexity and avoidable installation errors.</p>
+          <div class="ownership-motion ownership-motion--install" aria-hidden="true">
+            <svg viewBox="0 0 160 92" role="presentation">
+              <path class="motion-line" d="M19 47h31m60 0h31M50 47V25h25m35 22V25H85M50 47v22h25m35-22v22H85" />
+              <rect class="motion-body" x="74" y="14" width="38" height="66" rx="3" />
+              <path class="motion-detail" d="M82 26h22M82 36h22M82 59h22M82 69h14" />
+              <circle class="motion-node motion-node--one" cx="19" cy="47" r="5" />
+              <circle class="motion-node motion-node--two" cx="141" cy="47" r="5" />
+            </svg>
           </div>
-          <div class="how-step" data-step="2">
-            <div class="step-heading">
-              <svg class="step-icon correct-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="23 4 23 10 17 10"/>
-                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
-              </svg>
-              <div class="step-title">Correct</div>
-            </div>
-            <p class="step-primary">UV disinfection, salt chlorination and automatic pH/HCl dosing work together to keep the water balanced and healthy.</p>
+        </article>
+        <article class="ownership-stage sr sr-stagger" style="--stagger-delay:100ms">
+          <div class="ownership-meta"><span>02</span><small>Every day</small></div>
+          <h3>Runs automatically.</h3>
+          <p>Rio continuously monitors water quality, coordinates treatment and manages connected water systems in the background.</p>
+          <div class="ownership-motion ownership-motion--automatic" aria-hidden="true">
+            <svg viewBox="0 0 160 92" role="presentation">
+              <circle class="motion-ring" cx="80" cy="46" r="29" />
+              <path class="motion-arc motion-arc--one" d="M52 39a29 29 0 0 1 47-16l8-1-1 8" />
+              <path class="motion-arc motion-arc--two" d="M108 53a29 29 0 0 1-47 16l-8 1 1-8" />
+              <path class="motion-drop" d="M80 29c-8 11-13 17-13 25a13 13 0 0 0 26 0c0-8-5-14-13-25Z" />
+              <circle class="motion-pulse" cx="80" cy="54" r="4" />
+            </svg>
           </div>
-          <div class="how-step" data-step="3">
-            <div class="step-heading">
-              <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                <circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none" class="prevent-dot"/>
-              </svg>
-              <div class="step-title">Prevent</div>
-            </div>
-            <p class="step-primary">Pressure-triggered backwash maintains the sand filter, while supply warnings alert you before treatment chemicals run low.</p>
+        </article>
+        <article class="ownership-stage sr sr-stagger" style="--stagger-delay:200ms">
+          <div class="ownership-meta"><span>03</span><small>Only when needed</small></div>
+          <h3>Step in only when needed.</h3>
+          <p>Remote status and intelligent alerts tell the right person when genuine attention is required—before a small issue becomes a visit.</p>
+          <div class="ownership-motion ownership-motion--alert" aria-hidden="true">
+            <svg viewBox="0 0 160 92" role="presentation">
+              <path class="motion-bell" d="M63 60h34l-5-7V41c0-8-5-14-12-14s-12 6-12 14v12Z" />
+              <path class="motion-bell-clapper" d="M75 66a6 6 0 0 0 10 0" />
+              <path class="motion-wave motion-wave--one" d="M51 34c-7 7-7 17 0 24" />
+              <path class="motion-wave motion-wave--two" d="M109 34c7 7 7 17 0 24" />
+              <circle class="motion-alert-dot" cx="102" cy="24" r="6" />
+            </svg>
           </div>
-        </div><!-- .how-steps -->
-      </div><!-- .how-inner -->
-
-      <!-- Filtering status — appears when vacuum starts -->
-      <div class="how-filtering" id="how-filtering" aria-live="polite">
-        <span class="how-filtering-spinner"></span>
-        <span class="how-filtering-check">✓</span>
-        <span class="how-filtering-label">Filtering</span>
+        </article>
       </div>
-    </div><!-- .how-sticky -->
+    </div>
   </section>
 
   <!-- ═══════════════════════════════════════════
        KONTROLWATER SETUP MEASURES — scroll-drawn blueprint
   ═══════════════════════════════════════════════ -->
   <!-- ═══════════════════════════════════════════
-       INSIDE THE SYSTEM — 3D product reveal
+       SYSTEM SCOPE — what Rio is and what it coordinates
   ═══════════════════════════════════════════════ -->
-  <section class="insys">
-    <div class="insys-inner">
-      <div class="insys-header sr">
-        <span class="label">Inside the System</span>
-        <h2 class="insys-h2">KW2000. One integrated controller.</h2>
-        <p class="insys-sub">A single-board, wall-mounted system for filtration, water treatment, spa, water features and garden — pre-plumbed and pre-wired for a cleaner installation.</p>
+  <section class="scope" id="specifications">
+    <div class="scope-inner">
+      <div class="scope-header sr">
+        <span class="label">System architecture</span>
+        <h2 class="scope-h2">One control layer. And a cleaner plant room.</h2>
+        <p class="scope-lead">Explore what lives inside Rio, what it coordinates and what is configured around each installation.</p>
       </div>
-      <div class="insys-viewport sr">
-        <!--
-          VIDEO ENCODE SPEC — READ BEFORE RE-RENDERING:
-          This section sits on pure black (#000). The current .mp4 has a beige
-          plant-room background baked into pixels — it shows as-is (no chroma key).
-          Swap both source files below when the new black-background render is ready.
+      <div class="scope-explorer sr" data-scope-layer="0">
+        <div class="scope-tabs" role="tablist" aria-label="Explore the Rio system architecture">
+          <button class="scope-tab is-active" type="button" role="tab" aria-selected="true" data-scope-tab="0"><span>01</span>Inside Rio</button>
+          <button class="scope-tab" type="button" role="tab" aria-selected="false" data-scope-tab="1"><span>02</span>Coordinated by Rio</button>
+          <button class="scope-tab" type="button" role="tab" aria-selected="false" data-scope-tab="2"><span>03</span>Configured for the site</button>
+        </div>
 
-          Required delivery formats for transparency:
-            1. HEVC with alpha (.mov) — Safari / iOS transparency
-               ffmpeg -i input.mov -vcodec hevc_videotoolbox -alpha_quality 0.75 output.mov
-            2. VP9 with alpha (.webm) — Chrome / Firefox
-               ffmpeg -i input.mov -c:v libvpx-vp9 -pix_fmt yuva420p output.webm
+        <div class="scope-stage" aria-hidden="true">
+          <div class="scope-orbit scope-orbit--outer"></div>
+          <div class="scope-orbit scope-orbit--middle"></div>
+          <div class="scope-orbit scope-orbit--inner"></div>
+          <img src="KW_Media/KW_AI/KW_RIO_UNIT.png" alt="" class="scope-product" />
+          <span class="scope-hotspot scope-hotspot--inside"><i></i>Controller</span>
+          <span class="scope-hotspot scope-hotspot--connect"><i></i>Connected systems</span>
+          <span class="scope-hotspot scope-hotspot--site"><i></i>Site configuration</span>
+        </div>
 
-          Color-space note: encode full-range (0-255), not limited-range (16-235).
-          Limited-range produces #101010 blacks which show as a grey box on #000000.
-          Use: -color_range 2 (full) in ffmpeg flags.
-
-          New render requirements:
-          - Dark radial-gradient environment, no visible floor
-          - Rim/edge lighting + faint specular on gloss acrylic surfaces
-            (without this, gloss-black modules read as void on black background)
-        -->
-
-        <!-- Reduced-motion: static product image instead of video -->
-        <img class="insys-fallback"
-          src="kwdocs/_images/kw1000_overview_filter_v12_color_tranp.png"
-          alt="Previous-generation KONTROLWATER system render" />
-
-        <video
-          class="insys-video"
-          id="assembly-video"
-          muted
-          playsinline
-          preload="metadata"
-          loop
-          aria-hidden="true">
-          <source src="KW_SG/KW_AssemblyVideo.mp4" type="video/mp4">
-        </video>
+        <div class="scope-panels">
+          <article class="scope-panel is-active" data-scope-panel="0">
+            <span class="scope-panel-index">Layer 01</span>
+            <h3>Inside Rio</h3>
+            <p>The core intelligence and treatment hardware are brought together inside one engineered cabinet.</p>
+            <ul><li>Single-board control</li><li>Touchscreen and web access</li><li>Live probes, UV-C, salt and dosing</li><li>Motorised water routing</li></ul>
+          </article>
+          <article class="scope-panel" data-scope-panel="1">
+            <span class="scope-panel-index">Layer 02</span>
+            <h3>Coordinated by Rio</h3>
+            <p>Rio becomes the control layer for the wider plant room and connected outdoor-water systems.</p>
+            <ul><li>Two circulation pumps</li><li>Sand-filter backwash</li><li>Pool, spa and water-feature circuits</li><li>Garden schedules</li></ul>
+          </article>
+          <article class="scope-panel" data-scope-panel="2">
+            <span class="scope-panel-index">Layer 03</span>
+            <h3>Configured for the site</h3>
+            <p>Every installation is matched to the hydraulic, electrical and operational requirements of the property.</p>
+            <ul><li>Existing filtration equipment</li><li>Pipework and electrical supply</li><li>Optional circuits and features</li><li>Network and remote access</li></ul>
+          </article>
+        </div>
       </div>
     </div>
   </section>
@@ -4967,19 +6113,45 @@
       </div>
       <div class="audience-panels">
 
-        <div class="audience-panel sr sr-stagger" style="--stagger-delay:0ms">
+        <div class="audience-panel audience-panel--owner sr sr-stagger" style="--stagger-delay:0ms">
+          <div class="audience-visual" aria-hidden="true">
+            <svg viewBox="0 0 180 120" role="presentation">
+              <path class="audience-flow" d="M22 27C51 27 51 60 79 60h22c28 0 28-33 57-33M22 93c29 0 29-33 57-33m22 0c28 0 28 33 57 33" />
+              <circle class="audience-node audience-node--1" cx="22" cy="27" r="6"/><circle class="audience-node audience-node--2" cx="22" cy="93" r="6"/>
+              <circle class="audience-core" cx="90" cy="60" r="17"/><circle class="audience-core-dot" cx="90" cy="60" r="4"/>
+              <circle class="audience-node audience-node--3" cx="158" cy="27" r="6"/><circle class="audience-node audience-node--4" cx="158" cy="93" r="6"/>
+            </svg>
+          </div>
           <div class="audience-tag">If you own a pool</div>
           <h3 class="audience-panel-h3">One system, not four.</h3>
           <p class="audience-panel-body">Run your pool, spa, water features and garden from one touchscreen or web app.</p>
         </div>
 
-        <div class="audience-panel sr sr-stagger" style="--stagger-delay:120ms">
+        <div class="audience-panel audience-panel--installer sr sr-stagger" style="--stagger-delay:120ms">
+          <div class="audience-visual" aria-hidden="true">
+            <svg viewBox="0 0 180 120" role="presentation">
+              <rect class="audience-cabinet" x="57" y="19" width="66" height="82" rx="4"/>
+              <path class="audience-cabinet-detail" d="M69 34h42M69 47h42M69 73h42M69 86h26"/>
+              <path class="audience-plug audience-plug--left" d="M17 60h40M24 52v16M34 52v16"/>
+              <path class="audience-plug audience-plug--right" d="M123 60h40M146 52v16M156 52v16"/>
+              <circle class="audience-status" cx="108" cy="87" r="4"/>
+            </svg>
+          </div>
           <div class="audience-tag">If you install or maintain pools</div>
           <h3 class="audience-panel-h3">Install faster. Deliver sooner.</h3>
           <p class="audience-panel-body">Pre-plumbed and pre-wired to reduce installation steps, avoid errors and simplify commissioning.</p>
         </div>
 
-        <div class="audience-panel sr sr-stagger" style="--stagger-delay:240ms">
+        <div class="audience-panel audience-panel--operator sr sr-stagger" style="--stagger-delay:240ms">
+          <div class="audience-visual" aria-hidden="true">
+            <svg viewBox="0 0 180 120" role="presentation">
+              <circle class="audience-radar audience-radar--outer" cx="90" cy="60" r="43"/>
+              <circle class="audience-radar audience-radar--inner" cx="90" cy="60" r="25"/>
+              <path class="audience-radar-cross" d="M90 17v86M47 60h86"/>
+              <path class="audience-radar-sweep" d="M90 60 124 34A43 43 0 0 1 133 60Z"/>
+              <circle class="audience-radar-dot" cx="116" cy="48" r="5"/>
+            </svg>
+          </div>
           <div class="audience-tag">If you manage commercial pools</div>
           <h3 class="audience-panel-h3">Control from anywhere.</h3>
           <p class="audience-panel-body">Monitor, adjust and schedule water systems remotely from a phone or laptop.</p>
@@ -4995,34 +6167,44 @@
   <section class="installed">
     <div class="installed-inner">
       <div>
-        <h2 class="installed-h2 sr">One cabinet. Everything connected.</h2>
+        <h2 class="installed-h2 sr">From confirmation to installation in seven days.</h2>
+        <p class="installed-intro sr">Every installation starts with the pool, plant room and operating requirements—not a generic equipment list.</p>
         <ul class="installed-list">
           <li class="installed-item sr sr-stagger" style="--stagger-delay:0ms">
-            <span class="installed-num">01</span>
+            <span class="installed-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" role="presentation">
+                <circle class="installed-icon-orbit" cx="22" cy="22" r="13"></circle>
+                <path d="M31.5 31.5 41 41M16 22h12M22 16v12"></path>
+              </svg>
+            </span>
             <div class="installed-text">
-              <strong>Wall-mounted KW2000 cabinet</strong>
-              A 160 × 140 × 25 cm enclosure brings the controller and water paths together in one place.
+              <strong>Assess the site</strong>
+              Confirm the pool circuits, existing equipment, plant-room space, electrical supply and network access.
             </div>
           </li>
           <li class="installed-item sr sr-stagger" style="--stagger-delay:80ms">
-            <span class="installed-num">02</span>
+            <span class="installed-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" role="presentation">
+                <path class="installed-icon-flow" d="M8 14h22c5 0 9 4 9 9s-4 9-9 9H18"></path>
+                <path d="m13 27 5 5-5 5M8 10v8M12 10v8"></path>
+                <circle cx="31" cy="23" r="3"></circle>
+              </svg>
+            </span>
             <div class="installed-text">
-              <strong>Touchscreen and web app</strong>
-              Control the system at the cabinet, or monitor, adjust and schedule it remotely.
+              <strong>Configure and install</strong>
+              Prepare the pre-plumbed, pre-wired Rio cabinet around the hydraulic and control requirements of the project.
             </div>
           </li>
           <li class="installed-item sr sr-stagger" style="--stagger-delay:160ms">
-            <span class="installed-num">03</span>
+            <span class="installed-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" role="presentation">
+                <path class="installed-icon-shield" d="M24 6 39 12v11c0 10-6 16-15 20C15 39 9 33 9 23V12Z"></path>
+                <path d="m17 24 5 5 10-11"></path>
+              </svg>
+            </span>
             <div class="installed-text">
-              <strong>Integrated water treatment</strong>
-              UV disinfection, salt chlorination and automatic pH/HCl dosing are built into the system.
-            </div>
-          </li>
-          <li class="installed-item sr sr-stagger" style="--stagger-delay:240ms">
-            <span class="installed-num">04</span>
-            <div class="installed-text">
-              <strong>Automated hydraulic control</strong>
-              Motorised valves, dual pump control and pressure-triggered sand-filter backwash work from the same board.
+              <strong>Commission and hand over</strong>
+              Calibrate the treatment system, confirm every circuit and give the operator access at the cabinet and remotely.
             </div>
           </li>
         </ul>
@@ -5031,9 +6213,10 @@
         <img
           class="installed-diagram"
           id="installedDiagram"
-          src="KW_Media/KW100%20Setup%20Measures.png"
-          alt="KONTROLWATER installation dimensions and setup diagram"
+          src="KW_Media/KW3D/RIO_fallback.png"
+          alt="Rio controller shown with connected filtration, dosing and circulation equipment"
         />
+        <p class="installed-caption">Illustrative configuration. Equipment and optional circuits vary by site.</p>
       </div>
     </div>
   </section>
@@ -5047,7 +6230,7 @@
 
         <!-- ── Left: copy ── -->
         <div class="appvis-copy sr">
-          <h2 class="appvis-h2">Full visibility. Without the work.</h2>
+          <h2 class="appvis-h2">Full control. From anywhere.</h2>
           <div class="appvis-body">
             <p>Monitor, adjust and schedule your pool, spa, water features and garden from your phone or laptop — wherever you are.</p>
           </div>
@@ -5061,120 +6244,72 @@
 
               <!-- State 1: Status Overview -->
               <div class="app-state active" data-state="0">
-                <div class="app-bar">
-                  <span class="app-bar-name">KW2000</span>
-                  <span class="app-bar-time">08:47</span>
+                <div class="kw-app-bar">
+                  <div><span class="kw-app-brand">KONTROLWATER</span><strong>Quinta Azul</strong></div>
+                  <span class="kw-app-live"><i></i> Live</span>
                 </div>
-                <div class="app-status">
-                  <span class="app-status-dot"></span>
-                  <span class="app-status-text">Running Optimally</span>
-                </div>
-                <div class="app-section-title">System Overview</div>
-                <div class="app-readings">
-                  <div class="app-reading">
-                    <div class="app-reading-label">pH</div>
-                    <div class="app-reading-value">7.42</div>
+                <div class="kw-water-card">
+                  <div class="kw-water-orbit" aria-label="Water quality 98 percent">
+                    <span class="kw-water-orbit-ring"></span>
+                    <strong>98<small>%</small></strong>
+                    <em>Water quality</em>
                   </div>
-                  <div class="app-reading">
-                    <div class="app-reading-label">Salt cell</div>
-                    <div class="app-reading-value">ON</div>
-                  </div>
-                  <div class="app-reading">
-                    <div class="app-reading-label">UV</div>
-                    <div class="app-reading-value">ON</div>
-                  </div>
-                  <div class="app-reading">
-                    <div class="app-reading-label">Pump 1</div>
-                    <div class="app-reading-value">RUN</div>
+                  <div class="kw-water-summary">
+                    <span>Pool status</span>
+                    <strong>Everything is running beautifully.</strong>
+                    <svg class="kw-sparkline" viewBox="0 0 150 42" role="img" aria-label="Stable water quality trend">
+                      <defs><linearGradient id="kw-chart-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#47a5ff" stop-opacity=".32"/><stop offset="1" stop-color="#47a5ff" stop-opacity="0"/></linearGradient></defs>
+                      <path class="kw-spark-area" d="M0 34 C18 31 25 18 42 22 S67 31 82 18 107 9 122 14 138 10 150 7 V42 H0Z"></path>
+                      <path class="kw-spark-line" d="M0 34 C18 31 25 18 42 22 S67 31 82 18 107 9 122 14 138 10 150 7"></path>
+                    </svg>
                   </div>
                 </div>
-                <div class="app-readings" style="margin-bottom:0">
-                  <div class="app-reading">
-                    <div class="app-reading-label">Filter</div>
-                    <div class="app-reading-value">1.8<span class="app-reading-unit">bar</span></div>
-                  </div>
-                  <div class="app-reading">
-                    <div class="app-reading-label">Pump 2</div>
-                    <div class="app-reading-value">IDLE</div>
-                  </div>
+                <div class="kw-metric-grid">
+                  <div class="kw-metric"><span>pH</span><strong>7.42</strong><small>Optimal</small></div>
+                  <div class="kw-metric"><span>ORP</span><strong>742<sup>mV</sup></strong><small>Stable</small></div>
+                  <div class="kw-metric"><span>Temperature</span><strong>28.4<sup>°C</sup></strong><small>Comfort</small></div>
                 </div>
-                <div class="app-timestamp">Live system status</div>
+                <div class="kw-quick-row" aria-label="Quick system controls">
+                  <button type="button" class="kw-remote-toggle is-on" aria-pressed="true"><i>≈</i><span>Filter</span></button>
+                  <button type="button" class="kw-remote-toggle is-on" aria-pressed="true"><i>✦</i><span>Treat</span></button>
+                  <button type="button" class="kw-remote-toggle" aria-pressed="false"><i>◇</i><span>Spa</span></button>
+                </div>
               </div>
 
               <!-- State 2: schedules and connected systems -->
               <div class="app-state" data-state="1">
-                <div class="app-bar">
-                  <span class="app-bar-name">Schedules</span>
-                  <span class="app-bar-time">↗</span>
+                <div class="kw-app-bar">
+                  <div><span class="kw-app-brand">REMOTE CONTROL</span><strong>Systems</strong></div>
+                  <span class="kw-app-live"><i></i> Connected</span>
                 </div>
-                <div class="app-section-title">Outdoor Water</div>
-                <div class="app-perf-rows">
-                  <div class="app-perf-row">
-                    <span class="app-perf-label">Pool filtration</span>
-                    <span class="app-perf-value app-perf-blue">Active</span>
-                  </div>
-                  <div class="app-perf-row">
-                    <span class="app-perf-label">Spa mode</span>
-                    <span class="app-perf-value app-perf-blue">Ready</span>
-                  </div>
-                  <div class="app-perf-row">
-                    <span class="app-perf-label">Water features</span>
-                    <span class="app-perf-value">18:00</span>
-                  </div>
-                  <div class="app-perf-row">
-                    <span class="app-perf-label">Garden cycle</span>
-                    <span class="app-perf-value">19:00</span>
-                  </div>
-                  <div class="app-perf-row">
-                    <span class="app-perf-label">Backwash</span>
-                    <span class="app-perf-value">Auto</span>
-                  </div>
-                  <div class="app-perf-row">
-                    <span class="app-perf-label">Chemical supply</span>
-                    <span class="app-perf-value app-perf-blue">Good</span>
-                  </div>
+                <div class="kw-control-feature">
+                  <div class="kw-control-copy"><span>Pool filtration</span><strong>Running now</strong><small>08:00—18:00</small></div>
+                  <button type="button" class="kw-switch kw-remote-toggle is-on" aria-label="Toggle pool filtration" aria-pressed="true"><span></span></button>
+                  <div class="kw-flow-lines" aria-hidden="true"><i></i><i></i><i></i></div>
                 </div>
-                <div class="app-timestamp">Adjust any schedule remotely</div>
+                <div class="kw-system-grid">
+                  <button type="button" class="kw-system-tile kw-remote-toggle" aria-pressed="false"><i>◇</i><span>Spa</span><small>Ready</small></button>
+                  <button type="button" class="kw-system-tile kw-remote-toggle is-on" aria-pressed="true"><i>⌁</i><span>Water feature</span><small>Active</small></button>
+                  <button type="button" class="kw-system-tile kw-remote-toggle" aria-pressed="false"><i>⌇</i><span>Garden</span><small>19:00</small></button>
+                  <button type="button" class="kw-system-tile kw-remote-toggle is-on" aria-pressed="true"><i>◌</i><span>Auto care</span><small>On</small></button>
+                </div>
+                <div class="kw-next-event"><span>Next</span><strong>Garden irrigation</strong><time>19:00</time></div>
               </div>
 
               <!-- State 3: Activity Log -->
               <div class="app-state" data-state="2">
-                <div class="app-bar">
-                  <span class="app-bar-name">Recent Activity</span>
-                  <span class="app-bar-time">08:47</span>
+                <div class="kw-app-bar">
+                  <div><span class="kw-app-brand">SYSTEM INTELLIGENCE</span><strong>Activity</strong></div>
+                  <span class="kw-app-date">Today</span>
                 </div>
-                <div class="app-section-title">System Log</div>
-                <div class="app-log-entries">
-                  <div class="app-log-entry">
-                    <span class="app-log-dot ok"></span>
-                    <span class="app-log-text">pH correction applied</span>
-                    <span class="app-log-time">08:47</span>
-                  </div>
-                  <div class="app-log-entry">
-                    <span class="app-log-dot ok"></span>
-                    <span class="app-log-text">UV treatment active</span>
-                    <span class="app-log-time">08:41</span>
-                  </div>
-                  <div class="app-log-entry">
-                    <span class="app-log-dot ok"></span>
-                    <span class="app-log-text">Salt cell cycle complete</span>
-                    <span class="app-log-time">08:36</span>
-                  </div>
-                  <div class="app-log-entry">
-                    <span class="app-log-dot ok"></span>
-                    <span class="app-log-text">Filter pressure stable</span>
-                    <span class="app-log-time">08:30</span>
-                  </div>
-                  <div class="app-log-entry">
-                    <span class="app-log-dot ok"></span>
-                    <span class="app-log-text">Garden schedule confirmed</span>
-                    <span class="app-log-time">08:00</span>
-                  </div>
+                <div class="kw-alert-card"><i>✓</i><div><span>No action needed</span><strong>Rio handled 4 adjustments automatically.</strong></div></div>
+                <div class="kw-timeline">
+                  <div class="kw-event is-latest"><time>08:47</time><i></i><div><strong>pH correction complete</strong><span>Dosing adjusted by 0.03</span></div></div>
+                  <div class="kw-event"><time>08:41</time><i></i><div><strong>UV treatment active</strong><span>Water path verified</span></div></div>
+                  <div class="kw-event"><time>08:36</time><i></i><div><strong>Salt cycle complete</strong><span>Output returned to standby</span></div></div>
+                  <div class="kw-event"><time>08:30</time><i></i><div><strong>Filter pressure stable</strong><span>1.8 bar · within range</span></div></div>
                 </div>
-                <div class="app-clear">
-                  <span class="app-clear-dot"></span>
-                  <span class="app-clear-text">All systems clear</span>
-                </div>
+                <div class="kw-report-link">View weekly water report <span>↗</span></div>
               </div>
 
             </div><!-- .appvis-screen -->
@@ -5182,15 +6317,52 @@
 
           <!-- Dots sit below the phone frame, not inside the screen -->
           <div class="appvis-dots">
-            <span class="app-dot active" data-dot="0"></span>
-            <span class="app-dot" data-dot="1"></span>
-            <span class="app-dot" data-dot="2"></span>
+            <button type="button" class="app-dot active" data-dot="0">Overview</button>
+            <button type="button" class="app-dot" data-dot="1">Control</button>
+            <button type="button" class="app-dot" data-dot="2">Activity</button>
           </div>
         </div><!-- .appvis-phone-wrap -->
 
       </div><!-- .appvis-inner -->
     </div><!-- .appvis-sticky -->
   </section>
+
+  <script>
+    (() => {
+      /* Place remote control immediately after the environment story. */
+      const environments = document.getElementById('environments');
+      const remoteControl = document.getElementById('app-visibility');
+      if (environments && remoteControl) environments.after(remoteControl);
+
+      /* Three-layer architecture explorer. */
+      const explorer = document.querySelector('.scope-explorer');
+      if (!explorer) return;
+      const tabs = [...explorer.querySelectorAll('[data-scope-tab]')];
+      const panels = [...explorer.querySelectorAll('[data-scope-panel]')];
+      const setLayer = index => {
+        explorer.dataset.scopeLayer = String(index);
+        tabs.forEach((tab, i) => {
+          const active = i === index;
+          tab.classList.toggle('is-active', active);
+          tab.setAttribute('aria-selected', String(active));
+          tab.tabIndex = active ? 0 : -1;
+        });
+        panels.forEach((panel, i) => panel.classList.toggle('is-active', i === index));
+      };
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => setLayer(index));
+        tab.addEventListener('keydown', event => {
+          if (!['ArrowRight','ArrowLeft','ArrowDown','ArrowUp'].includes(event.key)) return;
+          event.preventDefault();
+          const direction = event.key === 'ArrowRight' || event.key === 'ArrowDown' ? 1 : -1;
+          const next = (index + direction + tabs.length) % tabs.length;
+          setLayer(next);
+          tabs[next].focus();
+        });
+      });
+      setLayer(0);
+    })();
+  </script>
 
 
   <!-- ═══════════════════════════════════════════
@@ -5208,31 +6380,31 @@
         <div class="benefit-head" role="row">
           <div class="benefit-col-title" role="columnheader">Traditional systems</div>
           <div class="benefit-col-title benefit-col-title--kw" role="columnheader">
-            <span>KONTROLWATER</span><span class="benefit-live">Live</span>
+            <span>Rio by KONTROLWATER</span>
           </div>
         </div>
         <div class="benefit-row" role="row">
-          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span><span class="benefit-topic-inline">Control</span>Separate controls for pool, spa and outdoor systems.</span></div>
+          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Separate controls for pool, spa and outdoor systems.</span></div>
           <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>Pool, spa, water features and garden on one board.</span></div>
         </div>
         <div class="benefit-row" role="row">
-          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span><span class="benefit-topic-inline">Disinfection</span>Multiple standalone treatment components.</span></div>
+          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Multiple standalone treatment components.</span></div>
           <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>Integrated UV and salt chlorination.</span></div>
         </div>
         <div class="benefit-row" role="row">
-          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span><span class="benefit-topic-inline">Chemistry</span>Manual pH checks and correction.</span></div>
+          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Manual pH checks and correction.</span></div>
           <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>Automatic pH correction and HCl dosing.</span></div>
         </div>
         <div class="benefit-row" role="row">
-          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span><span class="benefit-topic-inline">Backwash</span>Manual or fixed-schedule filter cleaning.</span></div>
+          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Manual or fixed-schedule filter cleaning.</span></div>
           <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>Pressure-triggered automatic backwash.</span></div>
         </div>
         <div class="benefit-row" role="row">
-          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span><span class="benefit-topic-inline">Installation</span>Multiple components plumbed and wired on site.</span></div>
+          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Multiple components plumbed and wired on site.</span></div>
           <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>One pre-plumbed, pre-wired cabinet.</span></div>
         </div>
         <div class="benefit-row" role="row">
-          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span><span class="benefit-topic-inline">Access</span>Local controls require a visit to the plant room.</span></div>
+          <div class="benefit-cell benefit-cell--traditional" role="cell"><span class="benefit-mark">−</span><span>Local controls require a visit to the plant room.</span></div>
           <div class="benefit-cell benefit-cell--kw" role="cell"><span class="benefit-mark">✓</span><span>Touchscreen at the cabinet and remote web app.</span></div>
         </div>
       </div>
@@ -5250,10 +6422,9 @@
             <h2 class="about-h2">Engineered in Europe. Built for precision.</h2>
             <div class="about-img-wrap sr">
               <img class="about-img"
-                src="KW_Media/KW_AI/KW_ENGINEERED_EUROPE.png"
-                alt="KONTROLWATER automated pool-management system engineered in Europe" />
+                src="KW_Media/KW_AI/KW_RIO_KW2000.png"
+                alt="KONTROLWATER Rio pool and garden controller engineered in Europe" />
             </div>
-            <p class="about-origin sr">Designed and manufactured in Portugal to industrial engineering standards.</p>
           </div>
           <ul class="about-proof sr">
             <li class="about-proof-item"><h3>Industrial engineering</h3><p>Built by specialists in industrial water treatment and control.</p></li>
@@ -5285,7 +6456,7 @@
         <div class="team-member sr sr-stagger" style="--stagger-delay:80ms">
           <img class="team-avatar" src="KW_Media/ProfileImages/ryan-houldershaw.webp" alt="Ryan Houldershaw" />
           <div class="team-name">Ryan Houldershaw</div>
-          <div class="team-title">Distributions Manager · Secret Gardens</div>
+          <div class="team-title">Distribution Manager · Secret Gardens</div>
           <p class="team-bio">Leads KONTROLWATER distribution through Secret Gardens, managing partner relationships and ensuring every installation meets the standard clients expect.</p>
         </div>
 
@@ -5297,7 +6468,7 @@
         </div>
 
         <div class="team-member sr sr-stagger" style="--stagger-delay:240ms">
-          <img class="team-avatar" src="https://i.pravatar.cc/120?img=57" alt="Eduardo Pereira" />
+          <div class="team-avatar team-avatar--initials" role="img" aria-label="Eduardo Pereira">EP</div>
           <div class="team-name">Eduardo Pereira</div>
           <div class="team-title">Founder · Secret Gardens</div>
           <p class="team-bio">Founded Secret Gardens and brought KONTROLWATER to market through the distribution network he built. Connects the product to the clients who need it most.</p>
@@ -5320,19 +6491,16 @@
           <h2 class="lead-question lead-single-line" id="lead-title">What kind of pool are we looking after?</h2>
           <div class="lead-options" role="group" aria-label="Choose your pool type">
             <button class="lead-option" type="button" data-pool-type="Private villa">
-              <span class="lead-option-num">01</span>
               <span class="lead-option-arrow" aria-hidden="true">→</span>
               <span class="lead-option-title">Private villa</span>
               <span class="lead-option-sub">One pool at a private residence</span>
             </button>
             <button class="lead-option" type="button" data-pool-type="Resorts and hotels">
-              <span class="lead-option-num">02</span>
               <span class="lead-option-arrow" aria-hidden="true">→</span>
               <span class="lead-option-title">Resorts &amp; hotels</span>
               <span class="lead-option-sub">Guest-focused resort or hotel pool</span>
             </button>
             <button class="lead-option" type="button" data-pool-type="Commercial operation">
-              <span class="lead-option-num">03</span>
               <span class="lead-option-arrow" aria-hidden="true">→</span>
               <span class="lead-option-title">Commercial operation</span>
               <span class="lead-option-sub">Professionally managed pool or portfolio</span>
@@ -5341,7 +6509,7 @@
         </div>
 
         <div class="lead-panel" data-lead-step="2">
-          <h2 class="lead-question lead-question-sm">Where should we start?</h2>
+          <h2 class="lead-question lead-question-sm">Tell us about the site.</h2>
           <p class="lead-helper lead-single-line">A few details help our engineering team understand your installation before we speak.</p>
           <div class="lead-fields">
             <div class="lead-field">
@@ -5399,13 +6567,14 @@
             <button class="lead-back" type="button" data-lead-back>← Back</button>
             <button class="btn-primary lead-continue" type="submit">Request my assessment →</button>
           </div>
+          <p class="lead-privacy">Your details are used to respond to this enquiry and discuss the installation with you.</p>
         </div>
 
         <div class="lead-panel lead-success" data-lead-step="success" aria-live="polite">
           <div class="lead-success-mark" aria-hidden="true">✓</div>
-          <div class="lead-kicker">Quote submitted</div>
+          <div class="lead-kicker">Assessment submitted</div>
           <h2 class="lead-question lead-question-sm">Thank you. We’ll be in touch.</h2>
-          <p class="lead-helper">Your details have been sent to KONTROLWATER. Our team will contact you as soon as possible to discuss your site and prepare the right KW2000 quote.</p>
+          <p class="lead-helper">Your details have been sent to KONTROLWATER. Our team will contact you to understand the site and discuss the right Rio configuration.</p>
           <button class="btn-ghost" type="button" id="lead-restart">Start another assessment</button>
           <p class="lead-note">A member of our team will respond using the contact details provided.</p>
         </div>
@@ -5847,7 +7016,7 @@
       const statuses = ['Water quality · live', 'UV + salt · active', 'pH dosing · automatic', 'Water paths · controlled', 'Backwash · pressure sensing'];
       const NUM = 5;
 
-      if (!outer || mods.length === 0) return;
+      if (!outer || panels.length === 0) return;
 
       const reduce   = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const isMobile = () => window.innerWidth <= 768;
@@ -5896,6 +7065,7 @@
 
         /* Progress rail: fill % = stage / (NUM-1) */
         if (railFill) railFill.style.height = `${(stage / (NUM - 1)) * 100}%`;
+        window.dispatchEvent(new CustomEvent('rio-stage', { detail: { stage } }));
       }
 
       function scrollToStage(i) {
@@ -5934,25 +7104,6 @@
         obs.observe(outer);
       }
     })();
-
-    /* ══════════════════════════════════════════════════
-       ASSEMBLY VIDEO — IntersectionObserver autoplay
-    ══════════════════════════════════════════════════ */
-    (function () {
-      const video = document.getElementById('assembly-video');
-      if (!video) return;
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const obs = new IntersectionObserver(entries => {
-        if (entries[0].isIntersecting) {
-          video.play().catch(() => {});
-        } else {
-          video.pause();
-          video.currentTime = 0;
-        }
-      }, { threshold: 0.25 });
-      obs.observe(video);
-    })();
-
 
     /* ══════════════════════════════════════════════════
        GSAP — How It Works: ambient particles + scroll-driven
@@ -6249,9 +7400,27 @@
 
       function setAppState(idx) {
         appStates.forEach((s, i) => s.classList.toggle('active', i === idx));
-        appDots.forEach((d, i)   => d.classList.toggle('active', i === idx));
+        appDots.forEach((d, i) => {
+          d.classList.toggle('active', i === idx);
+          d.setAttribute('aria-pressed', i === idx ? 'true' : 'false');
+        });
       }
       setAppState(0);
+
+      appDots.forEach((dot, idx) => {
+        dot.addEventListener('click', () => setAppState(idx));
+      });
+
+      avSection.querySelectorAll('.kw-remote-toggle').forEach(control => {
+        control.addEventListener('click', () => {
+          const isOn = control.classList.toggle('is-on');
+          control.setAttribute('aria-pressed', String(isOn));
+          const status = control.querySelector('small');
+          if (status && /^(Active|Off)$/i.test(status.textContent.trim())) {
+            status.textContent = isOn ? 'Active' : 'Off';
+          }
+        });
+      });
 
       // Desktop follows page scroll. Mobile uses direct swipe and tappable dots.
       if (window.innerWidth >= 640) {
@@ -6276,13 +7445,8 @@
           setAppState(mobileState);
         };
         appDots.forEach((dot, idx) => {
-          dot.setAttribute('role', 'button');
-          dot.setAttribute('tabindex', '0');
           dot.setAttribute('aria-label', 'Show app screen ' + (idx + 1));
           dot.addEventListener('click', () => selectMobileState(idx));
-          dot.addEventListener('keydown', event => {
-            if (event.key === 'Enter' || event.key === ' ') selectMobileState(idx);
-          });
         });
         if (phone) {
           phone.addEventListener('touchstart', event => { touchStartX = event.changedTouches[0].clientX; }, { passive: true });
@@ -6294,45 +7458,6 @@
         }
       }
     })();
-
-    /* ── Direct contact menu ── */
-    (() => {
-      const menu = document.getElementById('contact-menu');
-      const triggers = [document.getElementById('contact-menu-trigger'), document.getElementById('contact-menu-trigger-mobile')].filter(Boolean);
-      const close = menu && menu.querySelector('.contact-menu-close');
-      if (!menu || !triggers.length) return;
-      const setOpen = open => {
-        menu.hidden = !open;
-        triggers.forEach(trigger => trigger.setAttribute('aria-expanded', String(open)));
-      };
-      triggers.forEach(trigger => trigger.addEventListener('click', event => {
-        event.stopPropagation();
-        if (trigger.id === 'contact-menu-trigger-mobile') {
-          const hamburger = document.getElementById('nav-hamburger');
-          const mobileNav = document.getElementById('nav-mobile-menu');
-          if (hamburger) hamburger.classList.remove('open');
-          if (mobileNav) mobileNav.classList.remove('open');
-          document.body.style.overflow = '';
-        }
-        setOpen(menu.hidden);
-      }));
-      close.addEventListener('click', () => setOpen(false));
-      menu.querySelector('.contact-menu-quote').addEventListener('click', () => setOpen(false));
-      menu.querySelectorAll('[data-contact-channel]').forEach(choice => choice.addEventListener('click', () => {
-        const previous = document.querySelector('.contact-toast');
-        if (previous) previous.remove();
-        const toast = document.createElement('div');
-        toast.className = 'contact-toast';
-        toast.textContent = 'The direct contact number will be added shortly.';
-        document.body.appendChild(toast);
-        setTimeout(() => toast.remove(), 2600);
-      }));
-      document.addEventListener('click', event => {
-        if (!menu.hidden && !menu.contains(event.target)) setOpen(false);
-      });
-      document.addEventListener('keydown', event => { if (event.key === 'Escape') setOpen(false); });
-    })();
-
 
     /* ── Hamburger nav toggle (fade-in) ── */
     (function () {
